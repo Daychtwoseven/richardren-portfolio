@@ -1,103 +1,143 @@
-import Image from "next/image";
+'use client';
+
+import React from 'react';
+
+// Utility to combine Tailwind classes
+const cn = (...classes: (string | false | null | undefined)[]) =>
+  classes.filter(Boolean).join(' ');
+
+// Reusable Button component
+const Button = React.forwardRef<
+  HTMLButtonElement,
+  React.ButtonHTMLAttributes<HTMLButtonElement> &
+    React.AnchorHTMLAttributes<HTMLAnchorElement> & {
+      variant?: 'default' | 'outline';
+      href?: string;
+    }
+>(({ className, variant = 'default', href, ...props }, ref) => {
+  const base =
+    'inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2';
+  const variants = {
+    default: 'bg-black text-white hover:bg-gray-800',
+    outline: 'border border-gray-300 bg-white text-black hover:bg-gray-100',
+  };
+  const classes = cn(base, variants[variant], className);
+
+  if (href) {
+    return (
+      <a
+        href={href}
+        ref={ref as React.Ref<HTMLAnchorElement>}
+        className={classes}
+        {...props}
+      />
+    );
+  }
+
+  return (
+    <button ref={ref} className={classes} {...props} />
+  );
+});
+Button.displayName = 'Button';
+
+// Simple Card layout
+const Card = ({ children }: { children: React.ReactNode }) => (
+  <div className="rounded-2xl border bg-white shadow-md p-6">{children}</div>
+);
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
+    <main className="min-h-screen bg-gray-50 px-6 py-12 text-gray-800">
+      <section className="max-w-4xl mx-auto text-center">
+        <img
+          src="/profile.png"
+          alt="Chad Escol"
+          className="mx-auto mb-4 w-32 h-32 rounded-full object-cover border shadow-md"
         />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+        <h1 className="text-4xl font-bold mb-2">Hi, I'm Chad Escol 👋</h1>
+        <p className="text-lg text-gray-600 mb-6">
+          Full-Stack Developer | Web Automation & Scraping Expert | Python & Django Enthusiast
+        </p>
+        <Button variant="default" href="mailto:chardrichescol@gmail.com">
+          Contact Me
+        </Button>
+      </section>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      <section className="max-w-5xl mx-auto grid gap-6 mt-12 md:grid-cols-2">
+        <Card>
+          <h2 className="text-xl font-semibold mb-2">💻 Skills</h2>
+          <ul className="list-disc pl-5 space-y-1 text-sm text-gray-700">
+            <li>Python (Django, DRF, FastAPI, Flask)</li>
+            <li>Web Scraping (Selenium, BS4, Scrapy)</li>
+            <li>Automation (Zapier, Make, n8n)</li>
+            <li>jQuery, JavaScript, HTML, htmx</li>
+            <li>API Integrations, CRMs, CI/CD, Git</li>
+          </ul>
+        </Card>
+
+        <Card>
+          <h2 className="text-xl font-semibold mb-2">📁 Projects</h2>
+          <ul className="list-disc pl-5 space-y-1 text-sm text-gray-700">
+            <li>
+              <strong>SEO AI System</strong> – Django-based platform for automating keyword research and content generation.
+            </li>
+            <li>
+              <strong>Permit Scraper</strong> – Data extraction bot with export and weekly automation.
+            </li>
+            <li>
+              <strong>CRM Integrations</strong> – Sync leads between GHL, HubSpot, Airtable.
+            </li>
+            <li>
+              <strong>Scraper Dashboard</strong> – Django + Airtable integration for managing scraped data.
+            </li>
+            <li>
+              <strong>Google/News/Lead Bots</strong> – Automated bots for search, news and lead generation.
+            </li>
+            <li>
+              <strong>Telegram & Discord Bots</strong> – Created LLM-integrated bots using Zapier & OpenAI APIs.
+            </li>
+          </ul>
+        </Card>
+
+        <Card>
+          <h2 className="text-xl font-semibold mb-2">🎓 Education & Certifications</h2>
+          <ul className="list-disc pl-5 space-y-1 text-sm text-gray-700">
+            <li>BSIT – ACLC College of Butuan</li>
+            <li>Python Django Dev to Deployment</li>
+            <li>Selenium WebDriver + Frameworks</li>
+            <li>50 Projects: HTML, CSS, JavaScript</li>
+            <li>CI/CD, Docker, GitLab, Jenkins</li>
+          </ul>
+        </Card>
+
+        <Card>
+          <h2 className="text-xl font-semibold mb-2">📫 Let's Connect</h2>
+          <p className="text-sm text-gray-700 mb-3">
+            Open to freelance & full-time work. Let’s build something awesome together.
+          </p>
+          <div className="flex flex-wrap gap-2">
+            <Button variant="outline" href="mailto:chardrichescol@gmail.com">
+              Email
+            </Button>
+            <Button
+              variant="outline"
+              href="https://github.com/daychtwoseven"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub
+            </Button>
+            <Button
+              variant="outline"
+              href="https://www.linkedin.com/in/richardren-escol-9076651a8/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn
+            </Button>
+          </div>
+        </Card>
+      </section>
+    </main>
   );
 }
