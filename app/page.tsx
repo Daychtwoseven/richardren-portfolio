@@ -94,7 +94,10 @@ export default function Home() {
               <strong>Google/News/Lead Bots</strong> – Automated bots for search, news and lead generation.
             </li>
             <li>
-              <strong>Telegram & Discord Bots</strong> – Created LLM-integrated bots using Zapier & OpenAI APIs.
+              <strong>Telegram & Discord Bots</strong> – LLM-integrated bots using Zapier and OpenAI APIs.
+            </li>
+            <li>
+              <strong>DSWD Caraga Systems</strong> – Built DAC-IS and RELIANCE systems, QA testing, content dev, and technical support for public services.
             </li>
           </ul>
         </Card>
