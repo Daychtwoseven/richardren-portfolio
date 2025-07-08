@@ -1,12 +1,10 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 
-// Utility to combine Tailwind classes
 const cn = (...classes: (string | false | null | undefined)[]) =>
   classes.filter(Boolean).join(' ');
 
-// Reusable Button component
 const Button = React.forwardRef<
   HTMLButtonElement,
   React.ButtonHTMLAttributes<HTMLButtonElement> &
@@ -34,18 +32,17 @@ const Button = React.forwardRef<
     );
   }
 
-  return (
-    <button ref={ref} className={classes} {...props} />
-  );
+  return <button ref={ref} className={classes} {...props} />;
 });
 Button.displayName = 'Button';
 
-// Simple Card layout
 const Card = ({ children }: { children: React.ReactNode }) => (
   <div className="rounded-2xl border bg-white shadow-md p-6">{children}</div>
 );
 
 export default function Home() {
+  const [showNumber, setShowNumber] = useState(false);
+
   return (
     <main className="min-h-screen bg-gray-50 px-6 py-12 text-gray-800">
       <section className="max-w-4xl mx-auto text-center">
@@ -78,27 +75,13 @@ export default function Home() {
         <Card>
           <h2 className="text-xl font-semibold mb-2">📁 Projects</h2>
           <ul className="list-disc pl-5 space-y-1 text-sm text-gray-700">
-            <li>
-              <strong>SEO AI System</strong> – Django-based platform for automating keyword research and content generation.
-            </li>
-            <li>
-              <strong>Permit Scraper</strong> – Data extraction bot with export and weekly automation.
-            </li>
-            <li>
-              <strong>CRM Integrations</strong> – Sync leads between GHL, HubSpot, Airtable.
-            </li>
-            <li>
-              <strong>Scraper Dashboard</strong> – Django + Airtable integration for managing scraped data.
-            </li>
-            <li>
-              <strong>Google/News/Lead Bots</strong> – Automated bots for search, news and lead generation.
-            </li>
-            <li>
-              <strong>Telegram & Discord Bots</strong> – LLM-integrated bots using Zapier and OpenAI APIs.
-            </li>
-            <li>
-              <strong>DSWD Caraga Systems</strong> – Built DAC-IS and RELIANCE systems, QA testing, content dev, and technical support for public services.
-            </li>
+            <li><strong>SEO AI System</strong> – Django-based platform for automating keyword research and content generation.</li>
+            <li><strong>Permit Scraper</strong> – Data extraction bot with export and weekly automation.</li>
+            <li><strong>CRM Integrations</strong> – Sync leads between GHL, HubSpot, Airtable.</li>
+            <li><strong>Scraper Dashboard</strong> – Django + Airtable integration for managing scraped data.</li>
+            <li><strong>Google/News/Lead Bots</strong> – Automated bots for search, news and lead generation.</li>
+            <li><strong>Telegram & Discord Bots</strong> – LLM-integrated bots using Zapier and OpenAI APIs.</li>
+            <li><strong>DSWD Caraga Systems</strong> – Built DAC-IS and RELIANCE systems, QA testing, content dev, and technical support for public services.</li>
           </ul>
         </Card>
 
@@ -107,9 +90,16 @@ export default function Home() {
           <ul className="list-disc pl-5 space-y-1 text-sm text-gray-700">
             <li>BSIT – ACLC College of Butuan</li>
             <li>Python Django Dev to Deployment</li>
-            <li>Selenium WebDriver + Frameworks</li>
-            <li>50 Projects: HTML, CSS, JavaScript</li>
-            <li>CI/CD, Docker, GitLab, Jenkins</li>
+            <li>Python Django 2021 – Complete Course</li>
+            <li>Python and Django Full Stack Web Developer Bootcamp</li>
+            <li>Build An API With the Django Rest Framework Using Python – Udemy</li>
+            <li>Build a Backend REST API with Python & Django - Beginner: Udemy</li>
+            <li>Build a Backend REST API with Python & Django - Advanced: Udemy</li>
+            <li>DevOps: CICD with GIT GitLab Jenkins, Docker and Django: Udemy</li>
+            <li>Bootstrap 4 From Scratch With 5 Projects: Udemy</li>
+            <li>The Complete jQuery Course From Beginner To Advanced: Udemy</li>
+            <li>50 Projects In 50 Days – HTML, CSS & JavaScript: Udemy</li>
+            <li>Selenium Webdriver with PYTHON from Scratch + Frameworks: Udemy</li>
           </ul>
         </Card>
 
@@ -118,7 +108,7 @@ export default function Home() {
           <p className="text-sm text-gray-700 mb-3">
             Open to freelance & full-time work. Let’s build something awesome together.
           </p>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2 mb-3">
             <Button variant="outline" href="mailto:chardrichescol@gmail.com">
               Email
             </Button>
@@ -138,6 +128,25 @@ export default function Home() {
             >
               LinkedIn
             </Button>
+            <Button
+              variant="outline"
+              href="https://docs.google.com/document/d/1i1xfFdxSB6JJ2kBWNxwK1z7ZYarMvkuT/edit?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View Resume
+            </Button>
+          </div>
+          <div>
+            {!showNumber ? (
+              <Button variant="default" onClick={() => setShowNumber(true)}>
+                Show Contact Number
+              </Button>
+            ) : (
+              <p className="text-sm mt-2 font-medium text-gray-800">
+                📞 +63 935 620 7449
+              </p>
+            )}
           </div>
         </Card>
       </section>
