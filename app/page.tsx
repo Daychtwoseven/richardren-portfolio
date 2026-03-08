@@ -36,7 +36,19 @@ export default function Home() {
 
       {/* PROJECTS */}
       <section style={{ marginBottom: "60px" }}>
-        <h2>Selected Projects</h2>
+        <h2>Projects</h2>
+
+        <div style={{ marginBottom: "30px" }}>
+          <h3>GoHighLevel Lead Automation System</h3>
+          <p>
+            Built automated lead workflows inside GoHighLevel including lead capture,
+            tagging, pipeline movement, and automated SMS/email follow-ups to ensure
+            no leads were lost and sales teams received real-time updates.
+          </p>
+          <p style={{ color: "#94a3b8" }}>
+            Tech: GoHighLevel, Zapier, Webhooks
+          </p>
+        </div>
 
         <div style={{ marginBottom: "30px" }}>
           <h3>SEO Automation System</h3>
@@ -81,7 +93,6 @@ export default function Home() {
           </p>
         </div>
       </section>
-
       {/* SKILLS */}
       <section style={{ marginBottom: "60px" }}>
         <h2>Technical Skills</h2>
