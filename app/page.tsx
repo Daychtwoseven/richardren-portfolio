@@ -5,7 +5,7 @@ export default function Home() {
       {/* HERO */}
       <section style={{ marginBottom: "60px" }}>
         <h1 style={{ fontSize: "42px", marginBottom: "10px" }}>
-          Chad Escol
+          Richardren Escol
         </h1>
         <h2 style={{ fontWeight: "normal", color: "#94a3b8" }}>
           Technical Virtual Assistant | Automation & CRM Support Specialist
@@ -112,9 +112,8 @@ export default function Home() {
       {/* CONTACT */}
       <section>
         <h2>Contact</h2>
-        <p>Email: your@email.com</p>
-        <p>GitHub: https://github.com/yourusername</p>
-        <p>LinkedIn: https://linkedin.com/in/yourusername</p>
+        <p>Email: chardrichescol@gmail.com</p>
+        <p>LinkedIn: https://www.linkedin.com/in/richardren-escol-9076651a8/</p>
       </section>
 
     </main>

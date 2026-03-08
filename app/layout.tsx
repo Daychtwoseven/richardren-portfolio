@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 
 export const metadata = {
-  title: "Chad Escol | Technical Virtual Assistant",
+  title: "Richardren Escol | Technical Virtual Assistant",
   description:
     "Technical Virtual Assistant specializing in automation, CRM systems, and backend workflow support.",
 };
