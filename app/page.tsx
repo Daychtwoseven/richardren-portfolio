@@ -1,4 +1,43 @@
 import { Badge } from "./components/ui/badge";
+import { ProjectCarousel } from "./components/ui/carousel";
+
+const projectsData = [
+  {
+    title: "GoHighLevel Lead Automation System",
+    description:
+      "Built automated lead workflows inside GoHighLevel including lead capture, tagging, pipeline movement, and automated SMS/email follow-ups to ensure no leads were lost and sales teams received real-time updates.",
+    tech: "GoHighLevel, Zapier, Webhooks",
+    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop",
+  },
+  {
+    title: "SEO Automation System",
+    description:
+      "Built a Django-based platform to automate keyword research and content workflows. Reduced manual SEO research tasks through automated data collection and filtering.",
+    tech: "Python, Django, APIs",
+    image: "https://images.unsplash.com/photo-1523289333684-401256c280d0?w=600&h=400&fit=crop",
+  },
+  {
+    title: "Permit Data Scraper",
+    description:
+      "Developed a scheduled scraping bot to extract and process public permit data weekly, with structured exports and logging for reliability.",
+    tech: "Selenium, Python, Scheduling",
+    image: "https://images.unsplash.com/photo-1516321318423-f06fe4e504d0?w=600&h=400&fit=crop",
+  },
+  {
+    title: "CRM Integration System",
+    description:
+      "Automated lead synchronization between GoHighLevel, HubSpot, and Airtable, reducing manual data entry and improving reporting accuracy.",
+    tech: "Python, APIs, Zapier, Make",
+    image: "https://images.unsplash.com/photo-1460925895917-adf4e565db18?w=600&h=400&fit=crop",
+  },
+  {
+    title: "Automation Bots (Telegram & Discord)",
+    description:
+      "Developed AI-integrated bots with automated workflows using webhooks and APIs.",
+    tech: "Python, APIs, Webhooks",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop",
+  },
+];
 
 export default function Home() {
   return (
@@ -39,60 +78,8 @@ export default function Home() {
       {/* PROJECTS */}
       <section style={{ marginBottom: "60px" }}>
         <h2>Projects</h2>
-
-        <div style={{ marginBottom: "30px" }}>
-          <h3>GoHighLevel Lead Automation System</h3>
-          <p>
-            Built automated lead workflows inside GoHighLevel including lead capture,
-            tagging, pipeline movement, and automated SMS/email follow-ups to ensure
-            no leads were lost and sales teams received real-time updates.
-          </p>
-          <p style={{ color: "#94a3b8" }}>
-            Tech: GoHighLevel, Zapier, Webhooks
-          </p>
-        </div>
-
-        <div style={{ marginBottom: "30px" }}>
-          <h3>SEO Automation System</h3>
-          <p>
-            Built a Django-based platform to automate keyword research and content workflows.
-            Reduced manual SEO research tasks through automated data collection and filtering.
-          </p>
-          <p style={{ color: "#94a3b8" }}>
-            Tech: Python, Django, APIs
-          </p>
-        </div>
-
-        <div style={{ marginBottom: "30px" }}>
-          <h3>Permit Data Scraper</h3>
-          <p>
-            Developed a scheduled scraping bot to extract and process public permit data weekly,
-            with structured exports and logging for reliability.
-          </p>
-          <p style={{ color: "#94a3b8" }}>
-            Tech: Selenium, Python, Scheduling
-          </p>
-        </div>
-
-        <div style={{ marginBottom: "30px" }}>
-          <h3>CRM Integration System</h3>
-          <p>
-            Automated lead synchronization between GoHighLevel, HubSpot, and Airtable,
-            reducing manual data entry and improving reporting accuracy.
-          </p>
-          <p style={{ color: "#94a3b8" }}>
-            Tech: Python, APIs, Zapier, Make
-          </p>
-        </div>
-
-        <div>
-          <h3>Automation Bots (Telegram & Discord)</h3>
-          <p>
-            Developed AI-integrated bots with automated workflows using webhooks and APIs.
-          </p>
-          <p style={{ color: "#94a3b8" }}>
-            Tech: Python, APIs, Webhooks
-          </p>
+        <div style={{ marginTop: "20px" }}>
+          <ProjectCarousel projects={projectsData} />
         </div>
       </section>
       {/* SKILLS */}
