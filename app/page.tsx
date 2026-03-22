@@ -37,6 +37,41 @@ const projectsData = [
     tech: "Python, APIs, Webhooks",
     image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop",
   },
+  {
+    title: "FastAPI REST API Gateway",
+    description:
+      "Built a high-performance REST API gateway using FastAPI with automated request routing, rate limiting, and real-time monitoring. Integrated CI/CD pipelines and deployed with Docker for seamless scalability.",
+    tech: "FastAPI, Python, Docker, CI/CD",
+    image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=400&fit=crop",
+  },
+  {
+    title: "E-commerce Product Aggregator",
+    description:
+      "Developed a web scraper using BeautifulSoup to aggregate product data from multiple e-commerce platforms. Implemented automated price tracking and competitor analysis with scheduled data exports.",
+    tech: "Python, BeautifulSoup, APIs",
+    image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=600&h=400&fit=crop",
+  },
+  {
+    title: "Django DRF Backend API",
+    description:
+      "Created a full-featured REST API backend using Django and Django REST Framework with authentication, pagination, and advanced filtering. Deployed with Git and automated testing pipelines.",
+    tech: "Django, DRF, Python, Git",
+    image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=400&fit=crop",
+  },
+  {
+    title: "n8n Workflow Automation Platform",
+    description:
+      "Designed and deployed complex n8n workflows connecting 20+ services including payment processors, email systems, and cloud storage. Reduced operational overhead by 60% through intelligent automation.",
+    tech: "n8n, Webhooks, APIs",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
+  },
+  {
+    title: "Real Estate Listing Intelligence System",
+    description:
+      "Built a containerized web scraping solution using Selenium and BeautifulSoup to monitor real estate listings in real-time. Deployed across multiple servers using Docker for reliability and scalability.",
+    tech: "Selenium, Python, BeautifulSoup, Docker",
+    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=400&fit=crop",
+  },
 ];
 
 export default function Home() {
