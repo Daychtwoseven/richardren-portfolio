@@ -129,7 +129,7 @@ export default function Home() {
           I transform businesses through intelligent automation, CRM integrations, and scalable backend systems. Building reliable solutions that eliminate manual work and drive operational efficiency.
         </p>
         <div style={{ display: "flex", gap: "20px", justifyContent: "center", flexWrap: "wrap" }}>
-          <a href="mailto:chardrichescol@gmail.com" style={{
+          <a href="https://wa.me/639356207449" style={{
             backgroundColor: "linear-gradient(135deg, #00d4ff, #0099ff)",
             color: "#ffffff",
             padding: "16px 40px",
