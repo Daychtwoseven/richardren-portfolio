@@ -29,10 +29,11 @@ export function ProjectCarousel({ projects }: { projects: CarouselProject[] }) {
   return (
     <div
       style={{
-        backgroundColor: "#0f172a",
-        borderRadius: "12px",
+        backgroundColor: "rgba(30, 41, 59, 0.6)",
+        borderRadius: "16px",
         overflow: "hidden",
         border: "1px solid #334155",
+        boxShadow: "0 20px 60px rgba(0, 0, 0, 0.3)",
       }}
     >
       {/* Image */}
@@ -75,48 +76,52 @@ export function ProjectCarousel({ projects }: { projects: CarouselProject[] }) {
         <button
           onClick={goToPrevious}
           style={{
-            backgroundColor: "#1e293b",
-            color: "#e2e8f0",
+            backgroundColor: "rgba(30, 41, 59, 0.8)",
+            color: "#38bdf8",
             border: "1px solid #334155",
-            padding: "8px 16px",
-            borderRadius: "6px",
+            padding: "10px 18px",
+            borderRadius: "8px",
             cursor: "pointer",
             fontSize: "14px",
-            fontWeight: "500",
-            transition: "all 0.2s",
+            fontWeight: "600",
+            transition: "all 0.3s ease",
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = "#334155";
+            e.currentTarget.style.backgroundColor = "rgba(6, 182, 212, 0.15)";
+            e.currentTarget.style.borderColor = "#06b6d4";
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = "#1e293b";
+            e.currentTarget.style.backgroundColor = "rgba(30, 41, 59, 0.8)";
+            e.currentTarget.style.borderColor = "#334155";
           }}
         >
           ← Previous
         </button>
 
-        <div style={{ color: "#94a3b8", fontSize: "14px" }}>
+        <div style={{ color: "#94a3b8", fontSize: "14px", fontWeight: "600" }}>
           {currentIndex + 1} / {projects.length}
         </div>
 
         <button
           onClick={goToNext}
           style={{
-            backgroundColor: "#1e293b",
-            color: "#e2e8f0",
+            backgroundColor: "rgba(30, 41, 59, 0.8)",
+            color: "#38bdf8",
             border: "1px solid #334155",
-            padding: "8px 16px",
-            borderRadius: "6px",
+            padding: "10px 18px",
+            borderRadius: "8px",
             cursor: "pointer",
             fontSize: "14px",
-            fontWeight: "500",
-            transition: "all 0.2s",
+            fontWeight: "600",
+            transition: "all 0.3s ease",
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = "#334155";
+            e.currentTarget.style.backgroundColor = "rgba(6, 182, 212, 0.15)";
+            e.currentTarget.style.borderColor = "#06b6d4";
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = "#1e293b";
+            e.currentTarget.style.backgroundColor = "rgba(30, 41, 59, 0.8)";
+            e.currentTarget.style.borderColor = "#334155";
           }}
         >
           Next →

@@ -76,54 +76,91 @@ const projectsData = [
 
 export default function Home() {
   return (
-    <main style={{ maxWidth: "900px", margin: "0 auto", padding: "60px 20px" }}>
+    <div style={{ minHeight: "100vh", background: "linear-gradient(135deg, #0f172a 0%, #1e293b 100%)" }}>
+      {/* HEADER */}
+      <header style={{
+        borderBottom: "1px solid rgba(51, 65, 85, 0.5)",
+        backdropFilter: "blur(10px)",
+        position: "sticky",
+        top: 0,
+        zIndex: 50,
+      }}>
+        <div style={{ maxWidth: "900px", margin: "0 auto", padding: "20px" }}>
+          <h1 style={{ fontSize: "24px", fontWeight: "700", margin: 0, background: "linear-gradient(135deg, #38bdf8, #0ea5e9)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+            Richardren Escol
+          </h1>
+        </div>
+      </header>
+
+      <main style={{ maxWidth: "900px", margin: "0 auto", padding: "80px 20px" }}>
 
       {/* HERO */}
-      <section style={{ marginBottom: "60px" }}>
-        <h1 style={{ fontSize: "42px", marginBottom: "10px" }}>
-          Richardren Escol
+      <section style={{ marginBottom: "100px", textAlign: "center" }}>
+        <h1 style={{ fontSize: "56px", fontWeight: "800", marginBottom: "15px", background: "linear-gradient(135deg, #f1f5f9, #e2e8f0)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+          Technical Virtual Assistant
         </h1>
-        <h2 style={{ fontWeight: "normal", color: "#94a3b8" }}>
-          Technical Virtual Assistant | Automation & CRM Support Specialist
-        </h2>
-        <p style={{ marginTop: "20px", lineHeight: "1.7" }}>
+        <p style={{ fontSize: "20px", color: "#38bdf8", marginBottom: "30px", fontWeight: "500" }}>
+          Automation & CRM Support Specialist
+        </p>
+        <p style={{ marginTop: "20px", lineHeight: "1.8", fontSize: "16px", color: "#cbd5e1", maxWidth: "600px", margin: "0 auto", marginBottom: "20px" }}>
           I help businesses maintain and improve backend systems through workflow automation,
           CRM integrations, and data processing. I specialize in building reliable systems
           that reduce manual work and improve operational efficiency.
         </p>
-        <p style={{ marginTop: "10px", color: "#38bdf8" }}>
-          Available for full-time remote roles (40 hrs/week)
-        </p>
+        <div style={{ display: "inline-block", backgroundColor: "rgba(6, 182, 212, 0.1)", padding: "12px 24px", borderRadius: "12px", border: "1px solid #06b6d4", marginTop: "20px" }}>
+          <p style={{ margin: 0, color: "#38bdf8", fontWeight: "600" }}>
+            Available for full-time remote roles (40 hrs/week)
+          </p>
+        </div>
       </section>
 
       {/* SERVICES */}
-      <section style={{ marginBottom: "60px" }}>
-        <h2>Core Services</h2>
+      <section style={{ marginBottom: "100px" }}>
+        <h2 style={{ fontSize: "36px", fontWeight: "700", marginBottom: "40px", textAlign: "center" }}>Core Services</h2>
 
-        <ul style={{ lineHeight: "1.8", paddingLeft: "20px" }}>
-          <li>CRM setup & automation (HubSpot, GHL, Airtable)</li>
-          <li>Zapier / Make workflow automation</li>
-          <li>Lead capture → CRM → Email integrations</li>
-          <li>Web scraping & scheduled data extraction</li>
-          <li>API integrations & webhook handling</li>
-          <li>Automation monitoring & debugging</li>
-        </ul>
+        <div style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+          gap: "20px",
+        }}>
+          {[
+            "CRM setup & automation (HubSpot, GHL, Airtable)",
+            "Zapier / Make workflow automation",
+            "Lead capture → CRM → Email integrations",
+            "Web scraping & scheduled data extraction",
+            "API integrations & webhook handling",
+            "Automation monitoring & debugging",
+          ].map((service, idx) => (
+            <div key={idx} style={{
+              backgroundColor: "rgba(30, 41, 59, 0.8)",
+              border: "1px solid #334155",
+              borderRadius: "12px",
+              padding: "20px",
+              transition: "all 0.3s ease",
+              cursor: "pointer",
+            }}>
+              <p style={{ margin: 0, color: "#e2e8f0", lineHeight: "1.6", fontSize: "15px" }}>
+                {service}
+              </p>
+            </div>
+          ))}
+        </div>
       </section>
 
       {/* PROJECTS */}
-      <section style={{ marginBottom: "60px" }}>
-        <h2>Projects</h2>
+      <section style={{ marginBottom: "100px" }}>
+        <h2 style={{ fontSize: "36px", fontWeight: "700", marginBottom: "40px", textAlign: "center" }}>Featured Projects</h2>
         <div style={{ marginTop: "20px" }}>
           <ProjectCarousel projects={projectsData} />
         </div>
       </section>
       {/* SKILLS */}
-      <section style={{ marginBottom: "60px" }}>
-        <h2>Technical Skills</h2>
+      <section style={{ marginBottom: "100px" }}>
+        <h2 style={{ fontSize: "36px", fontWeight: "700", marginBottom: "40px", textAlign: "center" }}>Technical Skills</h2>
 
-        <div style={{ marginTop: "20px" }}>
-          <div style={{ marginBottom: "20px" }}>
-            <h3 style={{ fontSize: "16px", fontWeight: "600", marginBottom: "10px", color: "#e2e8f0" }}>Languages</h3>
+        <div style={{ marginTop: "30px" }}>
+          <div style={{ marginBottom: "40px" }}>
+            <h3 style={{ fontSize: "16px", fontWeight: "600", marginBottom: "15px", color: "#38bdf8", textTransform: "uppercase", letterSpacing: "1px" }}>Languages</h3>
             <div>
               <Badge>Python</Badge>
               <Badge>JavaScript</Badge>
@@ -131,8 +168,8 @@ export default function Home() {
             </div>
           </div>
 
-          <div style={{ marginBottom: "20px" }}>
-            <h3 style={{ fontSize: "16px", fontWeight: "600", marginBottom: "10px", color: "#e2e8f0" }}>Frameworks</h3>
+          <div style={{ marginBottom: "40px" }}>
+            <h3 style={{ fontSize: "16px", fontWeight: "600", marginBottom: "15px", color: "#38bdf8", textTransform: "uppercase", letterSpacing: "1px" }}>Frameworks</h3>
             <div>
               <Badge>Django</Badge>
               <Badge>DRF</Badge>
@@ -141,8 +178,8 @@ export default function Home() {
             </div>
           </div>
 
-          <div style={{ marginBottom: "20px" }}>
-            <h3 style={{ fontSize: "16px", fontWeight: "600", marginBottom: "10px", color: "#e2e8f0" }}>Automation</h3>
+          <div style={{ marginBottom: "40px" }}>
+            <h3 style={{ fontSize: "16px", fontWeight: "600", marginBottom: "15px", color: "#38bdf8", textTransform: "uppercase", letterSpacing: "1px" }}>Automation</h3>
             <div>
               <Badge>Zapier</Badge>
               <Badge>Make</Badge>
@@ -150,8 +187,8 @@ export default function Home() {
             </div>
           </div>
 
-          <div style={{ marginBottom: "20px" }}>
-            <h3 style={{ fontSize: "16px", fontWeight: "600", marginBottom: "10px", color: "#e2e8f0" }}>Data</h3>
+          <div style={{ marginBottom: "40px" }}>
+            <h3 style={{ fontSize: "16px", fontWeight: "600", marginBottom: "15px", color: "#38bdf8", textTransform: "uppercase", letterSpacing: "1px" }}>Data & Scraping</h3>
             <div>
               <Badge>Selenium</Badge>
               <Badge>BeautifulSoup</Badge>
@@ -160,7 +197,7 @@ export default function Home() {
           </div>
 
           <div>
-            <h3 style={{ fontSize: "16px", fontWeight: "600", marginBottom: "10px", color: "#e2e8f0" }}>Tools</h3>
+            <h3 style={{ fontSize: "16px", fontWeight: "600", marginBottom: "15px", color: "#38bdf8", textTransform: "uppercase", letterSpacing: "1px" }}>Tools & DevOps</h3>
             <div>
               <Badge>Git</Badge>
               <Badge>CI/CD</Badge>
@@ -171,12 +208,12 @@ export default function Home() {
       </section>
 
       {/* AI & DEVELOPMENT PLATFORMS */}
-      <section style={{ marginBottom: "60px" }}>
-        <h2>AI & Development Platforms</h2>
+      <section style={{ marginBottom: "100px" }}>
+        <h2 style={{ fontSize: "36px", fontWeight: "700", marginBottom: "40px", textAlign: "center" }}>AI & Development Platforms</h2>
 
-        <div style={{ marginTop: "20px" }}>
-          <div style={{ marginBottom: "20px" }}>
-            <h3 style={{ fontSize: "16px", fontWeight: "600", marginBottom: "10px", color: "#e2e8f0" }}>AI Assistants</h3>
+        <div style={{ marginTop: "30px" }}>
+          <div style={{ marginBottom: "40px" }}>
+            <h3 style={{ fontSize: "16px", fontWeight: "600", marginBottom: "15px", color: "#38bdf8", textTransform: "uppercase", letterSpacing: "1px" }}>AI Assistants</h3>
             <div>
               <Badge>Claude</Badge>
               <Badge>ChatGPT</Badge>
@@ -185,7 +222,7 @@ export default function Home() {
           </div>
 
           <div>
-            <h3 style={{ fontSize: "16px", fontWeight: "600", marginBottom: "10px", color: "#e2e8f0" }}>AI Development Tools</h3>
+            <h3 style={{ fontSize: "16px", fontWeight: "600", marginBottom: "15px", color: "#38bdf8", textTransform: "uppercase", letterSpacing: "1px" }}>AI Development Tools</h3>
             <div>
               <Badge>Lovable</Badge>
               <Badge>Replit</Badge>
@@ -195,18 +232,74 @@ export default function Home() {
       </section>
 
       {/* EDUCATION */}
-      <section style={{ marginBottom: "60px" }}>
-        <h2>Education</h2>
-        <p>BSIT – ACLC College of Butuan</p>
+      <section style={{ marginBottom: "100px" }}>
+        <h2 style={{ fontSize: "36px", fontWeight: "700", marginBottom: "40px", textAlign: "center" }}>Education</h2>
+        <div style={{ textAlign: "center", backgroundColor: "rgba(30, 41, 59, 0.6)", border: "1px solid #334155", borderRadius: "12px", padding: "30px" }}>
+          <p style={{ margin: 0, fontSize: "18px", fontWeight: "600", color: "#e2e8f0" }}>BSIT – ACLC College of Butuan</p>
+          <p style={{ margin: "10px 0 0 0", color: "#94a3b8", fontSize: "14px" }}>Bachelor of Science in Information Technology</p>
+        </div>
       </section>
 
       {/* CONTACT */}
-      <section>
-        <h2>Contact</h2>
-        <p>Email: chardrichescol@gmail.com</p>
-        <p>LinkedIn: https://www.linkedin.com/in/richardren-escol-9076651a8/</p>
+      <section style={{ marginBottom: "40px" }}>
+        <h2 style={{ fontSize: "36px", fontWeight: "700", marginBottom: "40px", textAlign: "center" }}>Get In Touch</h2>
+        <div style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+          gap: "20px",
+        }}>
+          <a href="mailto:chardrichescol@gmail.com" style={{
+            backgroundColor: "rgba(30, 41, 59, 0.8)",
+            border: "1px solid #334155",
+            borderRadius: "12px",
+            padding: "24px",
+            textDecoration: "none",
+            transition: "all 0.3s ease",
+            textAlign: "center",
+          }} onMouseEnter={(e) => {
+            e.currentTarget.style.backgroundColor = "rgba(6, 182, 212, 0.1)";
+            e.currentTarget.style.borderColor = "#06b6d4";
+          }} onMouseLeave={(e) => {
+            e.currentTarget.style.backgroundColor = "rgba(30, 41, 59, 0.8)";
+            e.currentTarget.style.borderColor = "#334155";
+          }}>
+            <p style={{ margin: 0, color: "#38bdf8", fontSize: "14px", fontWeight: "600", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "8px" }}>Email</p>
+            <p style={{ margin: 0, color: "#e2e8f0", fontSize: "15px" }}>chardrichescol@gmail.com</p>
+          </a>
+          <a href="https://www.linkedin.com/in/richardren-escol-9076651a8/" target="_blank" rel="noopener noreferrer" style={{
+            backgroundColor: "rgba(30, 41, 59, 0.8)",
+            border: "1px solid #334155",
+            borderRadius: "12px",
+            padding: "24px",
+            textDecoration: "none",
+            transition: "all 0.3s ease",
+            textAlign: "center",
+          }} onMouseEnter={(e) => {
+            e.currentTarget.style.backgroundColor = "rgba(6, 182, 212, 0.1)";
+            e.currentTarget.style.borderColor = "#06b6d4";
+          }} onMouseLeave={(e) => {
+            e.currentTarget.style.backgroundColor = "rgba(30, 41, 59, 0.8)";
+            e.currentTarget.style.borderColor = "#334155";
+          }}>
+            <p style={{ margin: 0, color: "#38bdf8", fontSize: "14px", fontWeight: "600", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "8px" }}>LinkedIn</p>
+            <p style={{ margin: 0, color: "#e2e8f0", fontSize: "14px" }}>richardren-escol</p>
+          </a>
+        </div>
       </section>
 
-    </main>
+      </main>
+
+      {/* FOOTER */}
+      <footer style={{
+        borderTop: "1px solid rgba(51, 65, 85, 0.5)",
+        backgroundColor: "rgba(15, 23, 42, 0.8)",
+        padding: "40px 20px",
+        textAlign: "center",
+      }}>
+        <p style={{ color: "#64748b", fontSize: "14px", margin: 0 }}>
+          © 2026 Richardren Escol. All rights reserved.
+        </p>
+      </footer>
+    </div>
   );
 }
