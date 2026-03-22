@@ -148,6 +148,30 @@ export default function Home() {
         </div>
       </section>
 
+      {/* AI & DEVELOPMENT PLATFORMS */}
+      <section style={{ marginBottom: "60px" }}>
+        <h2>AI & Development Platforms</h2>
+
+        <div style={{ marginTop: "20px" }}>
+          <div style={{ marginBottom: "20px" }}>
+            <h3 style={{ fontSize: "16px", fontWeight: "600", marginBottom: "10px", color: "#e2e8f0" }}>AI Assistants</h3>
+            <div>
+              <Badge>Claude</Badge>
+              <Badge>ChatGPT</Badge>
+              <Badge>Gemini</Badge>
+            </div>
+          </div>
+
+          <div>
+            <h3 style={{ fontSize: "16px", fontWeight: "600", marginBottom: "10px", color: "#e2e8f0" }}>AI Development Tools</h3>
+            <div>
+              <Badge>Lovable</Badge>
+              <Badge>Replit</Badge>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* EDUCATION */}
       <section style={{ marginBottom: "60px" }}>
         <h2>Education</h2>
