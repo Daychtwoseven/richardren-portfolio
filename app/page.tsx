@@ -116,6 +116,14 @@ export default function Home() {
         </div>
       </section>
 
+      {/* PROJECTS */}
+      <section style={{ marginBottom: "100px" }}>
+        <h2 style={{ fontSize: "36px", fontWeight: "700", marginBottom: "40px", textAlign: "center" }}>Featured Projects</h2>
+        <div style={{ marginTop: "20px" }}>
+          <ProjectCarousel projects={projectsData} />
+        </div>
+      </section>
+
       {/* SERVICES */}
       <section style={{ marginBottom: "100px" }}>
         <h2 style={{ fontSize: "36px", fontWeight: "700", marginBottom: "40px", textAlign: "center" }}>Core Services</h2>
@@ -126,6 +134,7 @@ export default function Home() {
           gap: "20px",
         }}>
           {[
+            "Full Stack Web development (Django HRMS & Automated SEO platform)",
             "CRM setup & automation (HubSpot, GHL, Airtable)",
             "Zapier / Make workflow automation",
             "Lead capture → CRM → Email integrations",
@@ -146,14 +155,6 @@ export default function Home() {
               </p>
             </div>
           ))}
-        </div>
-      </section>
-
-      {/* PROJECTS */}
-      <section style={{ marginBottom: "100px" }}>
-        <h2 style={{ fontSize: "36px", fontWeight: "700", marginBottom: "40px", textAlign: "center" }}>Featured Projects</h2>
-        <div style={{ marginTop: "20px" }}>
-          <ProjectCarousel projects={projectsData} />
         </div>
       </section>
       {/* SKILLS */}
