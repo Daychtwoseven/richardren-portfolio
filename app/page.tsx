@@ -1,3 +1,5 @@
+import { Badge } from "./components/ui/badge";
+
 export default function Home() {
   return (
     <main style={{ maxWidth: "900px", margin: "0 auto", padding: "60px 20px" }}>
@@ -97,21 +99,53 @@ export default function Home() {
       <section style={{ marginBottom: "60px" }}>
         <h2>Technical Skills</h2>
 
-        <p>
-          <strong>Languages:</strong> Python, JavaScript, HTML
-        </p>
-        <p>
-          <strong>Frameworks:</strong> Django, DRF, FastAPI, Flask
-        </p>
-        <p>
-          <strong>Automation:</strong> Zapier, Make, n8n
-        </p>
-        <p>
-          <strong>Data:</strong> Selenium, BeautifulSoup, Scrapy
-        </p>
-        <p>
-          <strong>Tools:</strong> Git, CI/CD, Docker
-        </p>
+        <div style={{ marginTop: "20px" }}>
+          <div style={{ marginBottom: "20px" }}>
+            <h3 style={{ fontSize: "16px", fontWeight: "600", marginBottom: "10px", color: "#e2e8f0" }}>Languages</h3>
+            <div>
+              <Badge>Python</Badge>
+              <Badge>JavaScript</Badge>
+              <Badge>HTML</Badge>
+            </div>
+          </div>
+
+          <div style={{ marginBottom: "20px" }}>
+            <h3 style={{ fontSize: "16px", fontWeight: "600", marginBottom: "10px", color: "#e2e8f0" }}>Frameworks</h3>
+            <div>
+              <Badge>Django</Badge>
+              <Badge>DRF</Badge>
+              <Badge>FastAPI</Badge>
+              <Badge>Flask</Badge>
+            </div>
+          </div>
+
+          <div style={{ marginBottom: "20px" }}>
+            <h3 style={{ fontSize: "16px", fontWeight: "600", marginBottom: "10px", color: "#e2e8f0" }}>Automation</h3>
+            <div>
+              <Badge>Zapier</Badge>
+              <Badge>Make</Badge>
+              <Badge>n8n</Badge>
+            </div>
+          </div>
+
+          <div style={{ marginBottom: "20px" }}>
+            <h3 style={{ fontSize: "16px", fontWeight: "600", marginBottom: "10px", color: "#e2e8f0" }}>Data</h3>
+            <div>
+              <Badge>Selenium</Badge>
+              <Badge>BeautifulSoup</Badge>
+              <Badge>Scrapy</Badge>
+            </div>
+          </div>
+
+          <div>
+            <h3 style={{ fontSize: "16px", fontWeight: "600", marginBottom: "10px", color: "#e2e8f0" }}>Tools</h3>
+            <div>
+              <Badge>Git</Badge>
+              <Badge>CI/CD</Badge>
+              <Badge>Docker</Badge>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* EDUCATION */}
