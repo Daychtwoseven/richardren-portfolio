@@ -1,3 +1,5 @@
+'use client';
+
 import { Badge } from "./components/ui/badge";
 import { ProjectCarousel } from "./components/ui/carousel";
 
