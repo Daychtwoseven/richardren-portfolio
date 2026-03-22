@@ -74,6 +74,27 @@ const projectsData = [
     tech: "Selenium, Python, BeautifulSoup, Docker",
     image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=400&fit=crop",
   },
+  {
+    title: "CRM System with Lovable",
+    description:
+      "Developed a comprehensive Customer Relationship Management system using Lovable's no-code platform with Supabase as the backend. Features include lead management, contact tracking, deal pipeline, and automated follow-ups.",
+    tech: "Lovable, Supabase, No-Code",
+    image: "https://images.unsplash.com/photo-1460925895917-adf4e565db18?w=600&h=400&fit=crop",
+  },
+  {
+    title: "Point of Sale System with Lovable",
+    description:
+      "Created a modern Point of Sale system using Lovable's development platform integrated with Supabase database. Includes inventory management, sales tracking, receipt generation, and real-time analytics.",
+    tech: "Lovable, Supabase, No-Code",
+    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
+  },
+  {
+    title: "Automated Web Scraper on Replit",
+    description:
+      "Built an automated web scraping solution deployed on Replit platform with data storage in Supabase. Scheduled scraping tasks for data collection, processing, and automated reporting with real-time dashboard updates.",
+    tech: "Replit, Supabase, Python, Web Scraping",
+    image: "https://images.unsplash.com/photo-1516321318423-f06fe4e504d0?w=600&h=400&fit=crop",
+  },
 ];
 
 export default function Home() {
