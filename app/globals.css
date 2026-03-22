@@ -14,10 +14,11 @@ html {
 }
 
 body {
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  background: linear-gradient(135deg, #0a0e27 0%, #16213e 50%, #0f3460 100%);
   color: #e2e8f0;
   line-height: 1.6;
   min-height: 100vh;
+  font-weight: 400;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -26,15 +27,34 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a {
-  color: #38bdf8;
+  color: #00d4ff;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 a:hover {
-  color: #06b6d4;
+  color: #0099ff;
 }
 
 button {
   font-family: inherit;
+  font-weight: 600;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 212, 255, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 212, 255, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 212, 255, 0.5);
 }

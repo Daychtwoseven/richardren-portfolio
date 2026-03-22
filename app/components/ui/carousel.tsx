@@ -29,11 +29,12 @@ export function ProjectCarousel({ projects }: { projects: CarouselProject[] }) {
   return (
     <div
       style={{
-        backgroundColor: "rgba(30, 41, 59, 0.6)",
+        backgroundColor: "rgba(30, 41, 59, 0.5)",
         borderRadius: "16px",
         overflow: "hidden",
-        border: "1px solid #334155",
-        boxShadow: "0 20px 60px rgba(0, 0, 0, 0.3)",
+        border: "1px solid rgba(0, 212, 255, 0.2)",
+        boxShadow: "0 25px 50px rgba(0, 0, 0, 0.4)",
+        backdropFilter: "blur(10px)",
       }}
     >
       {/* Image */}
@@ -58,7 +59,7 @@ export function ProjectCarousel({ projects }: { projects: CarouselProject[] }) {
         <p style={{ lineHeight: "1.6", marginBottom: "15px" }}>
           {current.description}
         </p>
-        <p style={{ color: "#38bdf8", marginBottom: "20px" }}>
+        <p style={{ color: "#00d4ff", marginBottom: "20px" }}>
           Tech: {current.tech}
         </p>
       </div>
@@ -70,15 +71,15 @@ export function ProjectCarousel({ projects }: { projects: CarouselProject[] }) {
           justifyContent: "space-between",
           alignItems: "center",
           padding: "20px 30px",
-          borderTop: "1px solid #334155",
+          borderTop: "1px solid rgba(0, 212, 255, 0.2)",
         }}
       >
         <button
           onClick={goToPrevious}
           style={{
-            backgroundColor: "rgba(30, 41, 59, 0.8)",
-            color: "#38bdf8",
-            border: "1px solid #334155",
+            backgroundColor: "rgba(0, 212, 255, 0.1)",
+            color: "#00d4ff",
+            border: "1px solid rgba(0, 212, 255, 0.3)",
             padding: "10px 18px",
             borderRadius: "8px",
             cursor: "pointer",
@@ -87,12 +88,12 @@ export function ProjectCarousel({ projects }: { projects: CarouselProject[] }) {
             transition: "all 0.3s ease",
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = "rgba(6, 182, 212, 0.15)";
-            e.currentTarget.style.borderColor = "#06b6d4";
+            e.currentTarget.style.backgroundColor = "rgba(0, 212, 255, 0.2)";
+            e.currentTarget.style.borderColor = "rgba(0, 212, 255, 0.6)";
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = "rgba(30, 41, 59, 0.8)";
-            e.currentTarget.style.borderColor = "#334155";
+            e.currentTarget.style.backgroundColor = "rgba(0, 212, 255, 0.1)";
+            e.currentTarget.style.borderColor = "rgba(0, 212, 255, 0.3)";
           }}
         >
           ← Previous
@@ -105,9 +106,9 @@ export function ProjectCarousel({ projects }: { projects: CarouselProject[] }) {
         <button
           onClick={goToNext}
           style={{
-            backgroundColor: "rgba(30, 41, 59, 0.8)",
-            color: "#38bdf8",
-            border: "1px solid #334155",
+            backgroundColor: "rgba(0, 212, 255, 0.1)",
+            color: "#00d4ff",
+            border: "1px solid rgba(0, 212, 255, 0.3)",
             padding: "10px 18px",
             borderRadius: "8px",
             cursor: "pointer",
@@ -116,12 +117,12 @@ export function ProjectCarousel({ projects }: { projects: CarouselProject[] }) {
             transition: "all 0.3s ease",
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = "rgba(6, 182, 212, 0.15)";
-            e.currentTarget.style.borderColor = "#06b6d4";
+            e.currentTarget.style.backgroundColor = "rgba(0, 212, 255, 0.2)";
+            e.currentTarget.style.borderColor = "rgba(0, 212, 255, 0.6)";
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = "rgba(30, 41, 59, 0.8)";
-            e.currentTarget.style.borderColor = "#334155";
+            e.currentTarget.style.backgroundColor = "rgba(0, 212, 255, 0.1)";
+            e.currentTarget.style.borderColor = "rgba(0, 212, 255, 0.3)";
           }}
         >
           Next →

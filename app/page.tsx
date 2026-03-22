@@ -78,92 +78,194 @@ const projectsData = [
 
 export default function Home() {
   return (
-    <div style={{ minHeight: "100vh", background: "linear-gradient(135deg, #0f172a 0%, #1e293b 100%)" }}>
+    <div style={{ 
+      minHeight: "100vh", 
+      background: "linear-gradient(135deg, #0a0e27 0%, #16213e 50%, #0f3460 100%)",
+      position: "relative",
+      overflow: "hidden"
+    }}>
+      {/* Animated background elements */}
+      <div style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        width: "100%",
+        height: "100%",
+        zIndex: 0,
+        opacity: 0.1,
+        backgroundImage: "radial-gradient(circle at 20% 50%, #00d4ff 0%, transparent 50%), radial-gradient(circle at 80% 80%, #0066cc 0%, transparent 50%)",
+        pointerEvents: "none",
+      }}></div>
+
       {/* HEADER */}
       <header style={{
-        borderBottom: "1px solid rgba(51, 65, 85, 0.5)",
-        backdropFilter: "blur(10px)",
+        borderBottom: "1px solid rgba(51, 65, 85, 0.3)",
+        backdropFilter: "blur(15px)",
         position: "sticky",
         top: 0,
         zIndex: 50,
+        backgroundColor: "rgba(10, 14, 39, 0.7)",
       }}>
-        <div style={{ maxWidth: "900px", margin: "0 auto", padding: "20px" }}>
-          <h1 style={{ fontSize: "24px", fontWeight: "700", margin: 0, background: "linear-gradient(135deg, #38bdf8, #0ea5e9)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+        <div style={{ maxWidth: "1000px", margin: "0 auto", padding: "20px" }}>
+          <h1 style={{ fontSize: "24px", fontWeight: "800", margin: 0, background: "linear-gradient(135deg, #00d4ff, #0099ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", letterSpacing: "-0.5px" }}>
             Richardren Escol
           </h1>
         </div>
       </header>
 
-      <main style={{ maxWidth: "900px", margin: "0 auto", padding: "80px 20px" }}>
+      <main style={{ maxWidth: "1000px", margin: "0 auto", padding: "0 20px", position: "relative", zIndex: 1 }}>
 
       {/* HERO */}
-      <section style={{ marginBottom: "100px", textAlign: "center" }}>
-        <h1 style={{ fontSize: "56px", fontWeight: "800", marginBottom: "15px", background: "linear-gradient(135deg, #f1f5f9, #e2e8f0)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
-          Technical Virtual Assistant
+      <section style={{ paddingTop: "120px", paddingBottom: "80px", textAlign: "center" }}>
+        <div style={{ marginBottom: "30px" }}>
+          <span style={{ display: "inline-block", fontSize: "12px", fontWeight: "700", color: "#00d4ff", textTransform: "uppercase", letterSpacing: "2px", backgroundColor: "rgba(0, 212, 255, 0.1)", padding: "8px 16px", borderRadius: "20px", border: "1px solid rgba(0, 212, 255, 0.3)" }}>
+            🚀 Technical Solutions Expert
+          </span>
+        </div>
+        <h1 style={{ fontSize: "64px", fontWeight: "900", marginBottom: "20px", background: "linear-gradient(135deg, #ffffff, #e0f2ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", lineHeight: "1.2", letterSpacing: "-1px" }}>
+          Automation & Backend Systems
         </h1>
-        <p style={{ fontSize: "20px", color: "#38bdf8", marginBottom: "30px", fontWeight: "500" }}>
-          Automation & CRM Support Specialist
+        <p style={{ fontSize: "18px", color: "#cbd5e1", marginBottom: "40px", maxWidth: "700px", margin: "0 auto 40px", lineHeight: "1.8" }}>
+          I transform businesses through intelligent automation, CRM integrations, and scalable backend systems. Building reliable solutions that eliminate manual work and drive operational efficiency.
         </p>
-        <p style={{ marginTop: "20px", lineHeight: "1.8", fontSize: "16px", color: "#cbd5e1", maxWidth: "600px", margin: "0 auto", marginBottom: "20px" }}>
-          I help businesses maintain and improve backend systems through workflow automation,
-          CRM integrations, and data processing. I specialize in building reliable systems
-          that reduce manual work and improve operational efficiency.
-        </p>
-        <div style={{ display: "inline-block", backgroundColor: "rgba(6, 182, 212, 0.1)", padding: "12px 24px", borderRadius: "12px", border: "1px solid #06b6d4", marginTop: "20px" }}>
-          <p style={{ margin: 0, color: "#38bdf8", fontWeight: "600" }}>
-            Available for full-time remote roles (40 hrs/week)
-          </p>
+        <div style={{ display: "flex", gap: "20px", justifyContent: "center", flexWrap: "wrap" }}>
+          <a href="mailto:chardrichescol@gmail.com" style={{
+            backgroundColor: "linear-gradient(135deg, #00d4ff, #0099ff)",
+            color: "#ffffff",
+            padding: "16px 40px",
+            borderRadius: "10px",
+            border: "none",
+            fontSize: "16px",
+            fontWeight: "700",
+            cursor: "pointer",
+            textDecoration: "none",
+            transition: "all 0.3s ease",
+            display: "inline-block",
+            boxShadow: "0 10px 30px rgba(0, 212, 255, 0.3)",
+          }} onMouseEnter={(e) => {
+            e.currentTarget.style.boxShadow = "0 15px 40px rgba(0, 212, 255, 0.5)";
+            e.currentTarget.style.transform = "translateY(-2px)";
+          }} onMouseLeave={(e) => {
+            e.currentTarget.style.boxShadow = "0 10px 30px rgba(0, 212, 255, 0.3)";
+            e.currentTarget.style.transform = "translateY(0)";
+          }}>
+            Let's Work Together
+          </a>
+          <a href="https://www.linkedin.com/in/richardren-escol-9076651a8/" target="_blank" rel="noopener noreferrer" style={{
+            backgroundColor: "rgba(0, 212, 255, 0.1)",
+            color: "#00d4ff",
+            padding: "16px 40px",
+            borderRadius: "10px",
+            border: "2px solid rgba(0, 212, 255, 0.3)",
+            fontSize: "16px",
+            fontWeight: "700",
+            cursor: "pointer",
+            textDecoration: "none",
+            transition: "all 0.3s ease",
+            display: "inline-block",
+          }} onMouseEnter={(e) => {
+            e.currentTarget.style.backgroundColor = "rgba(0, 212, 255, 0.2)";
+            e.currentTarget.style.borderColor = "rgba(0, 212, 255, 0.6)";
+          }} onMouseLeave={(e) => {
+            e.currentTarget.style.backgroundColor = "rgba(0, 212, 255, 0.1)";
+            e.currentTarget.style.borderColor = "rgba(0, 212, 255, 0.3)";
+          }}>
+            View LinkedIn
+          </a>
         </div>
       </section>
 
-      {/* PROJECTS */}
-      <section style={{ marginBottom: "100px" }}>
-        <h2 style={{ fontSize: "36px", fontWeight: "700", marginBottom: "40px", textAlign: "center" }}>Featured Projects</h2>
-        <div style={{ marginTop: "20px" }}>
+      {/* STATS */}
+      <section style={{ marginBottom: "100px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "20px" }}>
+        {[
+          { label: "Projects Delivered", value: "15+" },
+          { label: "Years Experience", value: "3+" },
+          { label: "Clients Served", value: "10+" },
+          { label: "Success Rate", value: "100%" },
+        ].map((stat, idx) => (
+          <div key={idx} style={{
+            backgroundColor: "rgba(30, 41, 59, 0.5)",
+            border: "1px solid rgba(0, 212, 255, 0.2)",
+            borderRadius: "12px",
+            padding: "30px 20px",
+            textAlign: "center",
+            backdropFilter: "blur(10px)",
+            transition: "all 0.3s ease",
+          }}>
+            <p style={{ margin: "0 0 10px 0", fontSize: "32px", fontWeight: "800", background: "linear-gradient(135deg, #00d4ff, #0099ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>{stat.value}</p>
+            <p style={{ margin: 0, color: "#94a3b8", fontSize: "14px", fontWeight: "600", textTransform: "uppercase", letterSpacing: "1px" }}>{stat.label}</p>
+          </div>
+        ))}
+      </section>
+
+      {/* FEATURED PROJECTS */}
+      <section style={{ marginBottom: "120px" }}>
+        <div style={{ marginBottom: "60px" }}>
+          <h2 style={{ fontSize: "42px", fontWeight: "900", marginBottom: "15px", background: "linear-gradient(135deg, #ffffff, #e0f2ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Featured Projects</h2>
+          <p style={{ color: "#94a3b8", fontSize: "16px", margin: 0 }}>Explore some of my most impactful work</p>
+        </div>
+        <div style={{ marginTop: "40px" }}>
           <ProjectCarousel projects={projectsData} />
         </div>
       </section>
 
       {/* SERVICES */}
-      <section style={{ marginBottom: "100px" }}>
-        <h2 style={{ fontSize: "36px", fontWeight: "700", marginBottom: "40px", textAlign: "center" }}>Core Services</h2>
+      <section style={{ marginBottom: "120px" }}>
+        <div style={{ marginBottom: "60px" }}>
+          <h2 style={{ fontSize: "42px", fontWeight: "900", marginBottom: "15px", background: "linear-gradient(135deg, #ffffff, #e0f2ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>What I Offer</h2>
+          <p style={{ color: "#94a3b8", fontSize: "16px", margin: 0 }}>Specialized services tailored to your business needs</p>
+        </div>
 
         <div style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
-          gap: "20px",
+          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+          gap: "24px",
         }}>
           {[
-            "Full Stack Web development (Django HRMS & Automated SEO platform)",
-            "CRM setup & automation (HubSpot, GHL, Airtable)",
-            "Zapier / Make workflow automation",
-            "Lead capture → CRM → Email integrations",
-            "Web scraping & scheduled data extraction",
-            "API integrations & webhook handling",
-            "Automation monitoring & debugging",
+            { emoji: "💻", title: "Full Stack Web Development", desc: "Django HRMS & Automated SEO platform" },
+            { emoji: "🔄", title: "CRM Automation", desc: "HubSpot, GoHighLevel, Airtable setup" },
+            { emoji: "⚡", title: "Workflow Automation", desc: "Zapier, Make, n8n integration" },
+            { emoji: "📊", title: "Data Extraction", desc: "Web scraping & scheduled extraction" },
+            { emoji: "🔌", title: "API Integration", desc: "Webhooks & custom integrations" },
+            { emoji: "🛡️", title: "System Monitoring", desc: "Automation debugging & optimization" },
           ].map((service, idx) => (
             <div key={idx} style={{
-              backgroundColor: "rgba(30, 41, 59, 0.8)",
-              border: "1px solid #334155",
-              borderRadius: "12px",
-              padding: "20px",
+              backgroundColor: "rgba(30, 41, 59, 0.5)",
+              border: "1px solid rgba(0, 212, 255, 0.2)",
+              borderRadius: "16px",
+              padding: "32px",
               transition: "all 0.3s ease",
+              backdropFilter: "blur(10px)",
               cursor: "pointer",
+            }} onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = "rgba(30, 41, 59, 0.8)";
+              e.currentTarget.style.borderColor = "rgba(0, 212, 255, 0.5)";
+              e.currentTarget.style.transform = "translateY(-8px)";
+              e.currentTarget.style.boxShadow = "0 20px 40px rgba(0, 212, 255, 0.1)";
+            }} onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = "rgba(30, 41, 59, 0.5)";
+              e.currentTarget.style.borderColor = "rgba(0, 212, 255, 0.2)";
+              e.currentTarget.style.transform = "translateY(0)";
+              e.currentTarget.style.boxShadow = "0 0 0 rgba(0, 212, 255, 0)";
             }}>
-              <p style={{ margin: 0, color: "#e2e8f0", lineHeight: "1.6", fontSize: "15px" }}>
-                {service}
-              </p>
+              <p style={{ fontSize: "32px", margin: "0 0 15px 0" }}>{service.emoji}</p>
+              <h3 style={{ margin: "0 0 10px 0", fontSize: "18px", fontWeight: "700", color: "#e2e8f0" }}>{service.title}</h3>
+              <p style={{ margin: 0, color: "#94a3b8", fontSize: "14px", lineHeight: "1.6" }}>{service.desc}</p>
             </div>
           ))}
         </div>
       </section>
-      {/* SKILLS */}
-      <section style={{ marginBottom: "100px" }}>
-        <h2 style={{ fontSize: "36px", fontWeight: "700", marginBottom: "40px", textAlign: "center" }}>Technical Skills</h2>
 
-        <div style={{ marginTop: "30px" }}>
-          <div style={{ marginBottom: "40px" }}>
-            <h3 style={{ fontSize: "16px", fontWeight: "600", marginBottom: "15px", color: "#38bdf8", textTransform: "uppercase", letterSpacing: "1px" }}>Languages</h3>
+      {/* SKILLS */}
+      <section style={{ marginBottom: "120px" }}>
+        <div style={{ marginBottom: "60px" }}>
+          <h2 style={{ fontSize: "42px", fontWeight: "900", marginBottom: "15px", background: "linear-gradient(135deg, #ffffff, #e0f2ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Technical Expertise</h2>
+          <p style={{ color: "#94a3b8", fontSize: "16px", margin: 0 }}>Technologies and tools I master</p>
+        </div>
+
+        <div style={{ marginTop: "40px" }}>
+          <div style={{ marginBottom: "50px" }}>
+            <h3 style={{ fontSize: "16px", fontWeight: "700", marginBottom: "20px", color: "#00d4ff", textTransform: "uppercase", letterSpacing: "2px" }}>💬 Languages</h3>
             <div>
               <Badge>Python</Badge>
               <Badge>JavaScript</Badge>
@@ -171,8 +273,8 @@ export default function Home() {
             </div>
           </div>
 
-          <div style={{ marginBottom: "40px" }}>
-            <h3 style={{ fontSize: "16px", fontWeight: "600", marginBottom: "15px", color: "#38bdf8", textTransform: "uppercase", letterSpacing: "1px" }}>Frameworks</h3>
+          <div style={{ marginBottom: "50px" }}>
+            <h3 style={{ fontSize: "16px", fontWeight: "700", marginBottom: "20px", color: "#00d4ff", textTransform: "uppercase", letterSpacing: "2px" }}>🏗️ Frameworks & Backends</h3>
             <div>
               <Badge>Django</Badge>
               <Badge>DRF</Badge>
@@ -181,8 +283,8 @@ export default function Home() {
             </div>
           </div>
 
-          <div style={{ marginBottom: "40px" }}>
-            <h3 style={{ fontSize: "16px", fontWeight: "600", marginBottom: "15px", color: "#38bdf8", textTransform: "uppercase", letterSpacing: "1px" }}>Automation</h3>
+          <div style={{ marginBottom: "50px" }}>
+            <h3 style={{ fontSize: "16px", fontWeight: "700", marginBottom: "20px", color: "#00d4ff", textTransform: "uppercase", letterSpacing: "2px" }}>🤖 Automation Platforms</h3>
             <div>
               <Badge>Zapier</Badge>
               <Badge>Make</Badge>
@@ -190,8 +292,8 @@ export default function Home() {
             </div>
           </div>
 
-          <div style={{ marginBottom: "40px" }}>
-            <h3 style={{ fontSize: "16px", fontWeight: "600", marginBottom: "15px", color: "#38bdf8", textTransform: "uppercase", letterSpacing: "1px" }}>Data & Scraping</h3>
+          <div style={{ marginBottom: "50px" }}>
+            <h3 style={{ fontSize: "16px", fontWeight: "700", marginBottom: "20px", color: "#00d4ff", textTransform: "uppercase", letterSpacing: "2px" }}>📈 Data & Scraping</h3>
             <div>
               <Badge>Selenium</Badge>
               <Badge>BeautifulSoup</Badge>
@@ -199,34 +301,21 @@ export default function Home() {
             </div>
           </div>
 
-          <div>
-            <h3 style={{ fontSize: "16px", fontWeight: "600", marginBottom: "15px", color: "#38bdf8", textTransform: "uppercase", letterSpacing: "1px" }}>Tools & DevOps</h3>
+          <div style={{ marginBottom: "50px" }}>
+            <h3 style={{ fontSize: "16px", fontWeight: "700", marginBottom: "20px", color: "#00d4ff", textTransform: "uppercase", letterSpacing: "2px" }}>⚙️ DevOps & Tools</h3>
             <div>
               <Badge>Git</Badge>
               <Badge>CI/CD</Badge>
               <Badge>Docker</Badge>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* AI & DEVELOPMENT PLATFORMS */}
-      <section style={{ marginBottom: "100px" }}>
-        <h2 style={{ fontSize: "36px", fontWeight: "700", marginBottom: "40px", textAlign: "center" }}>AI & Development Platforms</h2>
-
-        <div style={{ marginTop: "30px" }}>
-          <div style={{ marginBottom: "40px" }}>
-            <h3 style={{ fontSize: "16px", fontWeight: "600", marginBottom: "15px", color: "#38bdf8", textTransform: "uppercase", letterSpacing: "1px" }}>AI Assistants</h3>
+          <div>
+            <h3 style={{ fontSize: "16px", fontWeight: "700", marginBottom: "20px", color: "#00d4ff", textTransform: "uppercase", letterSpacing: "2px" }}>🤖 AI & Development</h3>
             <div>
               <Badge>Claude</Badge>
               <Badge>ChatGPT</Badge>
               <Badge>Gemini</Badge>
-            </div>
-          </div>
-
-          <div>
-            <h3 style={{ fontSize: "16px", fontWeight: "600", marginBottom: "15px", color: "#38bdf8", textTransform: "uppercase", letterSpacing: "1px" }}>AI Development Tools</h3>
-            <div>
               <Badge>Lovable</Badge>
               <Badge>Replit</Badge>
             </div>
@@ -235,57 +324,66 @@ export default function Home() {
       </section>
 
       {/* EDUCATION */}
-      <section style={{ marginBottom: "100px" }}>
-        <h2 style={{ fontSize: "36px", fontWeight: "700", marginBottom: "40px", textAlign: "center" }}>Education</h2>
-        <div style={{ textAlign: "center", backgroundColor: "rgba(30, 41, 59, 0.6)", border: "1px solid #334155", borderRadius: "12px", padding: "30px" }}>
-          <p style={{ margin: 0, fontSize: "18px", fontWeight: "600", color: "#e2e8f0" }}>BSIT – ACLC College of Butuan</p>
-          <p style={{ margin: "10px 0 0 0", color: "#94a3b8", fontSize: "14px" }}>Bachelor of Science in Information Technology</p>
+      <section style={{ marginBottom: "120px" }}>
+        <div style={{ marginBottom: "60px" }}>
+          <h2 style={{ fontSize: "42px", fontWeight: "900", marginBottom: "15px", background: "linear-gradient(135deg, #ffffff, #e0f2ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Education</h2>
+        </div>
+        <div style={{ 
+          backgroundColor: "rgba(30, 41, 59, 0.6)", 
+          border: "2px solid rgba(0, 212, 255, 0.3)", 
+          borderRadius: "16px", 
+          padding: "40px",
+          textAlign: "center",
+          backdropFilter: "blur(10px)",
+        }}>
+          <p style={{ margin: 0, fontSize: "24px", fontWeight: "700", color: "#e2e8f0", marginBottom: "10px" }}>🎓 BSIT</p>
+          <p style={{ margin: 0, fontSize: "18px", fontWeight: "600", color: "#00d4ff", marginBottom: "5px" }}>Bachelor of Science in Information Technology</p>
+          <p style={{ margin: 0, color: "#94a3b8", fontSize: "16px" }}>ACLC College of Butuan</p>
         </div>
       </section>
 
-      {/* CONTACT */}
-      <section style={{ marginBottom: "40px" }}>
-        <h2 style={{ fontSize: "36px", fontWeight: "700", marginBottom: "40px", textAlign: "center" }}>Get In Touch</h2>
-        <div style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-          gap: "20px",
-        }}>
+      {/* CONTACT CTA */}
+      <section style={{ marginBottom: "40px", padding: "60px 40px", backgroundColor: "rgba(0, 212, 255, 0.05)", border: "2px solid rgba(0, 212, 255, 0.2)", borderRadius: "16px", textAlign: "center", backdropFilter: "blur(10px)" }}>
+        <h2 style={{ fontSize: "36px", fontWeight: "800", marginBottom: "20px", color: "#e2e8f0" }}>Ready to Transform Your Business?</h2>
+        <p style={{ fontSize: "16px", color: "#cbd5e1", marginBottom: "40px", maxWidth: "500px", margin: "0 auto 40px" }}>Let's discuss how I can automate your workflows and improve your operations.</p>
+        <div style={{ display: "flex", gap: "20px", justifyContent: "center", flexWrap: "wrap" }}>
           <a href="mailto:chardrichescol@gmail.com" style={{
-            backgroundColor: "rgba(30, 41, 59, 0.8)",
-            border: "1px solid #334155",
-            borderRadius: "12px",
-            padding: "24px",
+            backgroundColor: "linear-gradient(135deg, #00d4ff, #0099ff)",
+            color: "#ffffff",
+            padding: "14px 35px",
+            borderRadius: "8px",
+            border: "none",
+            fontSize: "16px",
+            fontWeight: "700",
+            cursor: "pointer",
             textDecoration: "none",
             transition: "all 0.3s ease",
-            textAlign: "center",
+            display: "inline-block",
           }} onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = "rgba(6, 182, 212, 0.1)";
-            e.currentTarget.style.borderColor = "#06b6d4";
+            e.currentTarget.style.transform = "translateY(-2px)";
           }} onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = "rgba(30, 41, 59, 0.8)";
-            e.currentTarget.style.borderColor = "#334155";
+            e.currentTarget.style.transform = "translateY(0)";
           }}>
-            <p style={{ margin: 0, color: "#38bdf8", fontSize: "14px", fontWeight: "600", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "8px" }}>Email</p>
-            <p style={{ margin: 0, color: "#e2e8f0", fontSize: "15px" }}>chardrichescol@gmail.com</p>
+            Send Email
           </a>
           <a href="https://www.linkedin.com/in/richardren-escol-9076651a8/" target="_blank" rel="noopener noreferrer" style={{
-            backgroundColor: "rgba(30, 41, 59, 0.8)",
-            border: "1px solid #334155",
-            borderRadius: "12px",
-            padding: "24px",
+            backgroundColor: "rgba(0, 212, 255, 0.1)",
+            color: "#00d4ff",
+            padding: "14px 35px",
+            borderRadius: "8px",
+            border: "2px solid rgba(0, 212, 255, 0.4)",
+            fontSize: "16px",
+            fontWeight: "700",
+            cursor: "pointer",
             textDecoration: "none",
             transition: "all 0.3s ease",
-            textAlign: "center",
+            display: "inline-block",
           }} onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = "rgba(6, 182, 212, 0.1)";
-            e.currentTarget.style.borderColor = "#06b6d4";
+            e.currentTarget.style.backgroundColor = "rgba(0, 212, 255, 0.15)";
           }} onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = "rgba(30, 41, 59, 0.8)";
-            e.currentTarget.style.borderColor = "#334155";
+            e.currentTarget.style.backgroundColor = "rgba(0, 212, 255, 0.1)";
           }}>
-            <p style={{ margin: 0, color: "#38bdf8", fontSize: "14px", fontWeight: "600", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "8px" }}>LinkedIn</p>
-            <p style={{ margin: 0, color: "#e2e8f0", fontSize: "14px" }}>richardren-escol</p>
+            Connect on LinkedIn
           </a>
         </div>
       </section>
@@ -294,13 +392,16 @@ export default function Home() {
 
       {/* FOOTER */}
       <footer style={{
-        borderTop: "1px solid rgba(51, 65, 85, 0.5)",
-        backgroundColor: "rgba(15, 23, 42, 0.8)",
+        borderTop: "1px solid rgba(51, 65, 85, 0.3)",
+        backgroundColor: "rgba(10, 14, 39, 0.9)",
+        backdropFilter: "blur(10px)",
         padding: "40px 20px",
         textAlign: "center",
+        position: "relative",
+        zIndex: 1,
       }}>
-        <p style={{ color: "#64748b", fontSize: "14px", margin: 0 }}>
-          © 2026 Richardren Escol. All rights reserved.
+        <p style={{ color: "#64748b", fontSize: "14px", margin: 0, fontWeight: "600" }}>
+          © 2026 Richardren Escol. Crafted with precision. All rights reserved.
         </p>
       </footer>
     </div>

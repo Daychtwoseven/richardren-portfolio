@@ -7,25 +7,25 @@ export function Badge({ children }: { children: ReactNode }) {
     <span
       style={{
         display: "inline-block",
-        backgroundColor: "rgba(6, 182, 212, 0.1)",
-        color: "#38bdf8",
+        backgroundColor: "rgba(0, 212, 255, 0.1)",
+        color: "#00d4ff",
         padding: "8px 16px",
         borderRadius: "8px",
         fontSize: "14px",
         fontWeight: "600",
         marginRight: "10px",
         marginBottom: "10px",
-        border: "1px solid rgba(6, 182, 212, 0.3)",
+        border: "1px solid rgba(0, 212, 255, 0.3)",
         transition: "all 0.3s ease",
         cursor: "default",
       }}
       onMouseEnter={(e) => {
-        e.currentTarget.style.backgroundColor = "rgba(6, 182, 212, 0.2)";
-        e.currentTarget.style.borderColor = "rgba(6, 182, 212, 0.6)";
+        e.currentTarget.style.backgroundColor = "rgba(0, 212, 255, 0.2)";
+        e.currentTarget.style.borderColor = "rgba(0, 212, 255, 0.6)";
       }}
       onMouseLeave={(e) => {
-        e.currentTarget.style.backgroundColor = "rgba(6, 182, 212, 0.1)";
-        e.currentTarget.style.borderColor = "rgba(6, 182, 212, 0.3)";
+        e.currentTarget.style.backgroundColor = "rgba(0, 212, 255, 0.1)";
+        e.currentTarget.style.borderColor = "rgba(0, 212, 255, 0.3)";
       }}
     >
       {children}
