@@ -1,9 +1,23 @@
 import type { ReactNode } from "react";
+import { Inter, Space_Grotesk } from "next/font/google";
+import "./globals.css";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-body",
+  display: "swap",
+});
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-display",
+  display: "swap",
+});
 
 export const metadata = {
-  title: "Richardren Escol | Technical Virtual Assistant",
+  title: "Richardren Escol | Automation & Backend Systems",
   description:
-    "Technical Virtual Assistant specializing in automation, CRM systems, and backend workflow support.",
+    "Technical expert specializing in automation, CRM integrations, and scalable backend systems. Available on WhatsApp.",
 };
 
 interface RootLayoutProps {
@@ -12,17 +26,8 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en">
-      <body
-        style={{
-          margin: 0,
-          fontFamily: "Inter, sans-serif",
-          backgroundColor: "#0f172a",
-          color: "#e2e8f0",
-        }}
-      >
-        {children}
-      </body>
+    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
+      <body className="antialiased">{children}</body>
     </html>
   );
 }

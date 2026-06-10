@@ -1,33 +1,8 @@
-'use client';
-
-import { ReactNode } from 'react';
+import { ReactNode } from "react";
 
 export function Badge({ children }: { children: ReactNode }) {
   return (
-    <span
-      style={{
-        display: "inline-block",
-        backgroundColor: "rgba(0, 212, 255, 0.1)",
-        color: "#00d4ff",
-        padding: "8px 16px",
-        borderRadius: "8px",
-        fontSize: "14px",
-        fontWeight: "600",
-        marginRight: "10px",
-        marginBottom: "10px",
-        border: "1px solid rgba(0, 212, 255, 0.3)",
-        transition: "all 0.3s ease",
-        cursor: "default",
-      }}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.backgroundColor = "rgba(0, 212, 255, 0.2)";
-        e.currentTarget.style.borderColor = "rgba(0, 212, 255, 0.6)";
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.backgroundColor = "rgba(0, 212, 255, 0.1)";
-        e.currentTarget.style.borderColor = "rgba(0, 212, 255, 0.3)";
-      }}
-    >
+    <span className="inline-block rounded-lg border border-cyan-500/25 bg-cyan-500/10 px-3.5 py-1.5 text-sm font-medium text-cyan-300 transition-all duration-200 hover:border-cyan-400/50 hover:bg-cyan-500/20 mr-2 mb-2">
       {children}
     </span>
   );

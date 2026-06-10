@@ -3,7 +3,24 @@
 import { Badge } from "./components/ui/badge";
 import { ProjectCarousel } from "./components/ui/carousel";
 
+const WHATSAPP_NUMBER = "+639356207449";
+const WHATSAPP_URL = "https://wa.me/639356207449";
+const LINKEDIN_URL = "https://www.linkedin.com/in/richardren-escol-9076651a8/";
+
+const NAV_LINKS = [
+  { label: "Projects", href: "#projects" },
+  { label: "Services", href: "#services" },
+  { label: "Skills", href: "#skills" },
+];
+
 const projectsData = [
+  {
+    title: "YouTube Channel Email Scraper",
+    description:
+      "Built an automated pipeline to scrape and extract publicly available contact emails from YouTube channels at scale. Implemented filtering, deduplication, and structured CSV exports to support outreach and lead generation workflows.",
+    tech: "Python, Selenium, BeautifulSoup, APIs",
+    image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=600&h=400&fit=crop",
+  },
   {
     title: "GoHighLevel Lead Automation System",
     description:
@@ -97,333 +114,223 @@ const projectsData = [
   },
 ];
 
+const stats = [
+  { label: "Projects Delivered", value: "15+" },
+  { label: "Years Experience", value: "3+" },
+  { label: "Clients Served", value: "10+" },
+  { label: "Success Rate", value: "100%" },
+];
+
+const services = [
+  { icon: "💻", title: "Full Stack Web Development", desc: "Django HRMS & Automated SEO platform" },
+  { icon: "🔄", title: "CRM Automation", desc: "HubSpot, GoHighLevel, Airtable setup" },
+  { icon: "⚡", title: "Workflow Automation", desc: "Zapier, Make, n8n integration" },
+  { icon: "📊", title: "Data Extraction", desc: "Web scraping & scheduled extraction" },
+  { icon: "🔌", title: "API Integration", desc: "Webhooks & custom integrations" },
+  { icon: "🛡️", title: "System Monitoring", desc: "Automation debugging & optimization" },
+];
+
+const skillGroups = [
+  { label: "Languages", icon: "💬", skills: ["Python", "JavaScript", "HTML"] },
+  { label: "Frameworks & Backends", icon: "🏗️", skills: ["Django", "DRF", "FastAPI", "Flask"] },
+  { label: "Automation Platforms", icon: "🤖", skills: ["Zapier", "Make", "n8n"] },
+  { label: "Data & Scraping", icon: "📈", skills: ["Selenium", "BeautifulSoup", "Scrapy"] },
+  { label: "DevOps & Tools", icon: "⚙️", skills: ["Git", "CI/CD", "Docker"] },
+  { label: "AI & Development", icon: "✨", skills: ["Claude", "ChatGPT", "Gemini", "Cursor", "Lovable", "Replit"] },
+];
+
+function WhatsAppIcon({ className = "h-4 w-4" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.881 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    </svg>
+  );
+}
+
+function LinkedInIcon({ className = "h-4 w-4" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 114.126 0 2.063 2.063 0 01-2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+    </svg>
+  );
+}
+
 export default function Home() {
   return (
-    <div style={{ 
-      minHeight: "100vh", 
-      background: "linear-gradient(135deg, #0a0e27 0%, #16213e 50%, #0f3460 100%)",
-      position: "relative",
-      overflow: "hidden"
-    }}>
-      {/* Animated background elements */}
-      <div style={{
-        position: "fixed",
-        top: 0,
-        left: 0,
-        width: "100%",
-        height: "100%",
-        zIndex: 0,
-        opacity: 0.1,
-        backgroundImage: "radial-gradient(circle at 20% 50%, #00d4ff 0%, transparent 50%), radial-gradient(circle at 80% 80%, #0066cc 0%, transparent 50%)",
-        pointerEvents: "none",
-      }}></div>
+    <div className="relative min-h-screen overflow-hidden bg-mesh">
+      <div className="pointer-events-none fixed inset-0 grid-bg opacity-50" />
 
-      {/* HEADER */}
-      <header style={{
-        borderBottom: "1px solid rgba(51, 65, 85, 0.3)",
-        backdropFilter: "blur(15px)",
-        position: "sticky",
-        top: 0,
-        zIndex: 50,
-        backgroundColor: "rgba(10, 14, 39, 0.7)",
-      }}>
-        <div style={{ maxWidth: "1000px", margin: "0 auto", padding: "20px" }}>
-          <h1 style={{ fontSize: "24px", fontWeight: "800", margin: 0, background: "linear-gradient(135deg, #00d4ff, #0099ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", letterSpacing: "-0.5px" }}>
+      {/* Header */}
+      <header className="sticky top-0 z-50 border-b border-white/5 glass">
+        <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-4 px-5 py-4">
+          <a href="#" className="font-[family-name:var(--font-display)] text-lg font-bold text-gradient-accent tracking-tight">
             Richardren Escol
-          </h1>
+          </a>
+          <div className="flex flex-wrap items-center gap-4 sm:gap-6">
+            <nav className="hidden items-center gap-6 md:flex">
+              {NAV_LINKS.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="text-sm font-medium text-slate-400 transition-colors hover:text-cyan-300"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </nav>
+            <div className="flex items-center gap-3 sm:gap-4">
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-sm font-medium text-[#25d366] transition-colors hover:text-[#25d366]/80"
+              >
+                <WhatsAppIcon />
+                <span className="hidden sm:inline">{WHATSAPP_NUMBER}</span>
+                <span className="sm:hidden">WhatsApp</span>
+              </a>
+              <span className="text-slate-700">|</span>
+              <a
+                href={LINKEDIN_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-sm font-medium text-slate-400 transition-colors hover:text-cyan-300"
+              >
+                <LinkedInIcon />
+                LinkedIn
+              </a>
+            </div>
+          </div>
         </div>
       </header>
 
-      <main style={{ maxWidth: "1000px", margin: "0 auto", padding: "0 20px", position: "relative", zIndex: 1 }}>
+      <main className="relative z-10 mx-auto max-w-5xl px-5">
 
-      {/* HERO */}
-      <section style={{ paddingTop: "120px", paddingBottom: "80px", textAlign: "center" }}>
-        <div style={{ marginBottom: "30px" }}>
-          <span style={{ display: "inline-block", fontSize: "12px", fontWeight: "700", color: "#00d4ff", textTransform: "uppercase", letterSpacing: "2px", backgroundColor: "rgba(0, 212, 255, 0.1)", padding: "8px 16px", borderRadius: "20px", border: "1px solid rgba(0, 212, 255, 0.3)" }}>
-            🚀 Technical Solutions Expert
+        {/* Hero */}
+        <section className="flex flex-col items-center py-24 text-center md:py-32">
+          <span className="section-label animate-fade-up mb-8">
+            <span className="h-1.5 w-1.5 rounded-full bg-cyan-400" />
+            Technical Solutions Expert
           </span>
-        </div>
-        <h1 style={{ fontSize: "64px", fontWeight: "900", marginBottom: "20px", background: "linear-gradient(135deg, #ffffff, #e0f2ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", lineHeight: "1.2", letterSpacing: "-1px" }}>
-          Automation & Backend Systems
-        </h1>
-        <p style={{ fontSize: "18px", color: "#cbd5e1", marginBottom: "40px", maxWidth: "700px", margin: "0 auto 40px", lineHeight: "1.8" }}>
-          I transform businesses through intelligent automation, CRM integrations, and scalable backend systems. Building reliable solutions that eliminate manual work and drive operational efficiency.
-        </p>
-        <div style={{ display: "flex", gap: "20px", justifyContent: "center", flexWrap: "wrap" }}>
-          <a href="https://wa.me/639356207449" style={{
-            backgroundColor: "linear-gradient(135deg, #00d4ff, #0099ff)",
-            color: "#ffffff",
-            padding: "16px 40px",
-            borderRadius: "10px",
-            border: "none",
-            fontSize: "16px",
-            fontWeight: "700",
-            cursor: "pointer",
-            textDecoration: "none",
-            transition: "all 0.3s ease",
-            display: "inline-block",
-            boxShadow: "0 10px 30px rgba(0, 212, 255, 0.3)",
-          }} onMouseEnter={(e) => {
-            e.currentTarget.style.boxShadow = "0 15px 40px rgba(0, 212, 255, 0.5)";
-            e.currentTarget.style.transform = "translateY(-2px)";
-          }} onMouseLeave={(e) => {
-            e.currentTarget.style.boxShadow = "0 10px 30px rgba(0, 212, 255, 0.3)";
-            e.currentTarget.style.transform = "translateY(0)";
-          }}>
-            Let's Work Together
-          </a>
-          <a href="https://www.linkedin.com/in/richardren-escol-9076651a8/" target="_blank" rel="noopener noreferrer" style={{
-            backgroundColor: "rgba(0, 212, 255, 0.1)",
-            color: "#00d4ff",
-            padding: "16px 40px",
-            borderRadius: "10px",
-            border: "2px solid rgba(0, 212, 255, 0.3)",
-            fontSize: "16px",
-            fontWeight: "700",
-            cursor: "pointer",
-            textDecoration: "none",
-            transition: "all 0.3s ease",
-            display: "inline-block",
-          }} onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = "rgba(0, 212, 255, 0.2)";
-            e.currentTarget.style.borderColor = "rgba(0, 212, 255, 0.6)";
-          }} onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = "rgba(0, 212, 255, 0.1)";
-            e.currentTarget.style.borderColor = "rgba(0, 212, 255, 0.3)";
-          }}>
-            View LinkedIn
-          </a>
-        </div>
-      </section>
 
-      {/* STATS */}
-      <section style={{ marginBottom: "100px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "20px" }}>
-        {[
-          { label: "Projects Delivered", value: "15+" },
-          { label: "Years Experience", value: "3+" },
-          { label: "Clients Served", value: "10+" },
-          { label: "Success Rate", value: "100%" },
-        ].map((stat, idx) => (
-          <div key={idx} style={{
-            backgroundColor: "rgba(30, 41, 59, 0.5)",
-            border: "1px solid rgba(0, 212, 255, 0.2)",
-            borderRadius: "12px",
-            padding: "30px 20px",
-            textAlign: "center",
-            backdropFilter: "blur(10px)",
-            transition: "all 0.3s ease",
-          }}>
-            <p style={{ margin: "0 0 10px 0", fontSize: "32px", fontWeight: "800", background: "linear-gradient(135deg, #00d4ff, #0099ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>{stat.value}</p>
-            <p style={{ margin: 0, color: "#94a3b8", fontSize: "14px", fontWeight: "600", textTransform: "uppercase", letterSpacing: "1px" }}>{stat.label}</p>
-          </div>
-        ))}
-      </section>
+          <h1 className="animate-fade-up animate-fade-up-delay-1 mb-6 max-w-3xl font-[family-name:var(--font-display)] text-4xl font-bold leading-tight tracking-tight text-gradient sm:text-5xl md:text-6xl">
+            Automation &amp; Backend Systems
+          </h1>
 
-      {/* FEATURED PROJECTS */}
-      <section style={{ marginBottom: "120px" }}>
-        <div style={{ marginBottom: "60px" }}>
-          <h2 style={{ fontSize: "42px", fontWeight: "900", marginBottom: "15px", background: "linear-gradient(135deg, #ffffff, #e0f2ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Featured Projects</h2>
-          <p style={{ color: "#94a3b8", fontSize: "16px", margin: 0 }}>Explore some of my most impactful work</p>
-        </div>
-        <div style={{ marginTop: "40px" }}>
-          <ProjectCarousel projects={projectsData} />
-        </div>
-      </section>
+          <p className="animate-fade-up animate-fade-up-delay-2 max-w-2xl text-lg leading-relaxed text-slate-400">
+            I transform businesses through intelligent automation, CRM integrations, and scalable backend systems — building reliable solutions that eliminate manual work and drive operational efficiency.
+          </p>
+        </section>
 
-      {/* SERVICES */}
-      <section style={{ marginBottom: "120px" }}>
-        <div style={{ marginBottom: "60px" }}>
-          <h2 style={{ fontSize: "42px", fontWeight: "900", marginBottom: "15px", background: "linear-gradient(135deg, #ffffff, #e0f2ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>What I Offer</h2>
-          <p style={{ color: "#94a3b8", fontSize: "16px", margin: 0 }}>Specialized services tailored to your business needs</p>
-        </div>
-
-        <div style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-          gap: "24px",
-        }}>
-          {[
-            { emoji: "💻", title: "Full Stack Web Development", desc: "Django HRMS & Automated SEO platform" },
-            { emoji: "🔄", title: "CRM Automation", desc: "HubSpot, GoHighLevel, Airtable setup" },
-            { emoji: "⚡", title: "Workflow Automation", desc: "Zapier, Make, n8n integration" },
-            { emoji: "📊", title: "Data Extraction", desc: "Web scraping & scheduled extraction" },
-            { emoji: "🔌", title: "API Integration", desc: "Webhooks & custom integrations" },
-            { emoji: "🛡️", title: "System Monitoring", desc: "Automation debugging & optimization" },
-          ].map((service, idx) => (
-            <div key={idx} style={{
-              backgroundColor: "rgba(30, 41, 59, 0.5)",
-              border: "1px solid rgba(0, 212, 255, 0.2)",
-              borderRadius: "16px",
-              padding: "32px",
-              transition: "all 0.3s ease",
-              backdropFilter: "blur(10px)",
-              cursor: "pointer",
-            }} onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = "rgba(30, 41, 59, 0.8)";
-              e.currentTarget.style.borderColor = "rgba(0, 212, 255, 0.5)";
-              e.currentTarget.style.transform = "translateY(-8px)";
-              e.currentTarget.style.boxShadow = "0 20px 40px rgba(0, 212, 255, 0.1)";
-            }} onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = "rgba(30, 41, 59, 0.5)";
-              e.currentTarget.style.borderColor = "rgba(0, 212, 255, 0.2)";
-              e.currentTarget.style.transform = "translateY(0)";
-              e.currentTarget.style.boxShadow = "0 0 0 rgba(0, 212, 255, 0)";
-            }}>
-              <p style={{ fontSize: "32px", margin: "0 0 15px 0" }}>{service.emoji}</p>
-              <h3 style={{ margin: "0 0 10px 0", fontSize: "18px", fontWeight: "700", color: "#e2e8f0" }}>{service.title}</h3>
-              <p style={{ margin: 0, color: "#94a3b8", fontSize: "14px", lineHeight: "1.6" }}>{service.desc}</p>
+        {/* Stats */}
+        <section className="mb-28 grid grid-cols-2 gap-4 md:grid-cols-4">
+          {stats.map((stat, idx) => (
+            <div
+              key={idx}
+              className="glass glass-hover rounded-2xl p-6 text-center transition-all duration-300"
+            >
+              <p className="mb-1 font-[family-name:var(--font-display)] text-3xl font-bold text-gradient-accent">
+                {stat.value}
+              </p>
+              <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
+                {stat.label}
+              </p>
             </div>
           ))}
-        </div>
-      </section>
+        </section>
 
-      {/* SKILLS */}
-      <section style={{ marginBottom: "120px" }}>
-        <div style={{ marginBottom: "60px" }}>
-          <h2 style={{ fontSize: "42px", fontWeight: "900", marginBottom: "15px", background: "linear-gradient(135deg, #ffffff, #e0f2ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Technical Expertise</h2>
-          <p style={{ color: "#94a3b8", fontSize: "16px", margin: 0 }}>Technologies and tools I master</p>
-        </div>
+        {/* Projects */}
+        <section id="projects" className="mb-28 scroll-mt-24">
+          <div className="mb-10">
+            <span className="section-label mb-4">Portfolio</span>
+            <h2 className="mt-4 font-[family-name:var(--font-display)] text-3xl font-bold text-white md:text-4xl">
+              Featured Projects
+            </h2>
+            <p className="mt-2 text-slate-400">Explore some of my most impactful work</p>
+          </div>
+          <ProjectCarousel projects={projectsData} />
+        </section>
 
-        <div style={{ marginTop: "40px" }}>
-          <div style={{ marginBottom: "50px" }}>
-            <h3 style={{ fontSize: "16px", fontWeight: "700", marginBottom: "20px", color: "#00d4ff", textTransform: "uppercase", letterSpacing: "2px" }}>💬 Languages</h3>
-            <div>
-              <Badge>Python</Badge>
-              <Badge>JavaScript</Badge>
-              <Badge>HTML</Badge>
-            </div>
+        {/* Services */}
+        <section id="services" className="mb-28 scroll-mt-24">
+          <div className="mb-10">
+            <span className="section-label mb-4">Services</span>
+            <h2 className="mt-4 font-[family-name:var(--font-display)] text-3xl font-bold text-white md:text-4xl">
+              What I Offer
+            </h2>
+            <p className="mt-2 text-slate-400">Specialized services tailored to your business needs</p>
           </div>
 
-          <div style={{ marginBottom: "50px" }}>
-            <h3 style={{ fontSize: "16px", fontWeight: "700", marginBottom: "20px", color: "#00d4ff", textTransform: "uppercase", letterSpacing: "2px" }}>🏗️ Frameworks & Backends</h3>
-            <div>
-              <Badge>Django</Badge>
-              <Badge>DRF</Badge>
-              <Badge>FastAPI</Badge>
-              <Badge>Flask</Badge>
-            </div>
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {services.map((service, idx) => (
+              <div
+                key={idx}
+                className="glass glass-hover group rounded-2xl p-7 transition-all duration-300"
+              >
+                <span className="mb-4 block text-3xl transition-transform duration-300 group-hover:scale-110">
+                  {service.icon}
+                </span>
+                <h3 className="mb-2 font-[family-name:var(--font-display)] text-lg font-semibold text-white">
+                  {service.title}
+                </h3>
+                <p className="text-sm leading-relaxed text-slate-400">{service.desc}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Skills */}
+        <section id="skills" className="mb-28 scroll-mt-24">
+          <div className="mb-10">
+            <span className="section-label mb-4">Expertise</span>
+            <h2 className="mt-4 font-[family-name:var(--font-display)] text-3xl font-bold text-white md:text-4xl">
+              Technical Expertise
+            </h2>
+            <p className="mt-2 text-slate-400">Technologies and tools I master</p>
           </div>
 
-          <div style={{ marginBottom: "50px" }}>
-            <h3 style={{ fontSize: "16px", fontWeight: "700", marginBottom: "20px", color: "#00d4ff", textTransform: "uppercase", letterSpacing: "2px" }}>🤖 Automation Platforms</h3>
-            <div>
-              <Badge>Zapier</Badge>
-              <Badge>Make</Badge>
-              <Badge>n8n</Badge>
-            </div>
+          <div className="grid gap-6 sm:grid-cols-2">
+            {skillGroups.map((group, idx) => (
+              <div key={idx} className="glass rounded-2xl p-6">
+                <h3 className="mb-4 flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-cyan-400">
+                  <span>{group.icon}</span>
+                  {group.label}
+                </h3>
+                <div className="flex flex-wrap">
+                  {group.skills.map((skill) => (
+                    <Badge key={skill}>{skill}</Badge>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
+        </section>
 
-          <div style={{ marginBottom: "50px" }}>
-            <h3 style={{ fontSize: "16px", fontWeight: "700", marginBottom: "20px", color: "#00d4ff", textTransform: "uppercase", letterSpacing: "2px" }}>📈 Data & Scraping</h3>
-            <div>
-              <Badge>Selenium</Badge>
-              <Badge>BeautifulSoup</Badge>
-              <Badge>Scrapy</Badge>
-            </div>
+        {/* Education */}
+        <section className="mb-16">
+          <div className="mb-10">
+            <span className="section-label mb-4">Background</span>
+            <h2 className="mt-4 font-[family-name:var(--font-display)] text-3xl font-bold text-white md:text-4xl">
+              Education
+            </h2>
           </div>
-
-          <div style={{ marginBottom: "50px" }}>
-            <h3 style={{ fontSize: "16px", fontWeight: "700", marginBottom: "20px", color: "#00d4ff", textTransform: "uppercase", letterSpacing: "2px" }}>⚙️ DevOps & Tools</h3>
-            <div>
-              <Badge>Git</Badge>
-              <Badge>CI/CD</Badge>
-              <Badge>Docker</Badge>
-            </div>
+          <div className="glass rounded-2xl p-10 text-center">
+            <p className="mb-2 text-2xl">🎓</p>
+            <p className="mb-1 font-[family-name:var(--font-display)] text-xl font-bold text-white">BSIT</p>
+            <p className="mb-1 font-medium text-cyan-400">Bachelor of Science in Information Technology</p>
+            <p className="text-slate-400">ACLC College of Butuan</p>
           </div>
-
-          <div>
-            <h3 style={{ fontSize: "16px", fontWeight: "700", marginBottom: "20px", color: "#00d4ff", textTransform: "uppercase", letterSpacing: "2px" }}>🤖 AI & Development</h3>
-            <div>
-              <Badge>Claude</Badge>
-              <Badge>ChatGPT</Badge>
-              <Badge>Gemini</Badge>
-              <Badge>Lovable</Badge>
-              <Badge>Replit</Badge>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* EDUCATION */}
-      <section style={{ marginBottom: "120px" }}>
-        <div style={{ marginBottom: "60px" }}>
-          <h2 style={{ fontSize: "42px", fontWeight: "900", marginBottom: "15px", background: "linear-gradient(135deg, #ffffff, #e0f2ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Education</h2>
-        </div>
-        <div style={{ 
-          backgroundColor: "rgba(30, 41, 59, 0.6)", 
-          border: "2px solid rgba(0, 212, 255, 0.3)", 
-          borderRadius: "16px", 
-          padding: "40px",
-          textAlign: "center",
-          backdropFilter: "blur(10px)",
-        }}>
-          <p style={{ margin: 0, fontSize: "24px", fontWeight: "700", color: "#e2e8f0", marginBottom: "10px" }}>🎓 BSIT</p>
-          <p style={{ margin: 0, fontSize: "18px", fontWeight: "600", color: "#00d4ff", marginBottom: "5px" }}>Bachelor of Science in Information Technology</p>
-          <p style={{ margin: 0, color: "#94a3b8", fontSize: "16px" }}>ACLC College of Butuan</p>
-        </div>
-      </section>
-
-      {/* CONTACT CTA */}
-      <section style={{ marginBottom: "40px", padding: "60px 40px", backgroundColor: "rgba(0, 212, 255, 0.05)", border: "2px solid rgba(0, 212, 255, 0.2)", borderRadius: "16px", textAlign: "center", backdropFilter: "blur(10px)" }}>
-        <h2 style={{ fontSize: "36px", fontWeight: "800", marginBottom: "20px", color: "#e2e8f0" }}>Ready to Transform Your Business?</h2>
-        <p style={{ fontSize: "16px", color: "#cbd5e1", marginBottom: "40px", maxWidth: "500px", margin: "0 auto 40px" }}>Let's discuss how I can automate your workflows and improve your operations.</p>
-        <div style={{ display: "flex", gap: "20px", justifyContent: "center", flexWrap: "wrap" }}>
-          <a href="mailto:chardrichescol@gmail.com" style={{
-            backgroundColor: "linear-gradient(135deg, #00d4ff, #0099ff)",
-            color: "#ffffff",
-            padding: "14px 35px",
-            borderRadius: "8px",
-            border: "none",
-            fontSize: "16px",
-            fontWeight: "700",
-            cursor: "pointer",
-            textDecoration: "none",
-            transition: "all 0.3s ease",
-            display: "inline-block",
-          }} onMouseEnter={(e) => {
-            e.currentTarget.style.transform = "translateY(-2px)";
-          }} onMouseLeave={(e) => {
-            e.currentTarget.style.transform = "translateY(0)";
-          }}>
-            Send Email
-          </a>
-          <a href="https://www.linkedin.com/in/richardren-escol-9076651a8/" target="_blank" rel="noopener noreferrer" style={{
-            backgroundColor: "rgba(0, 212, 255, 0.1)",
-            color: "#00d4ff",
-            padding: "14px 35px",
-            borderRadius: "8px",
-            border: "2px solid rgba(0, 212, 255, 0.4)",
-            fontSize: "16px",
-            fontWeight: "700",
-            cursor: "pointer",
-            textDecoration: "none",
-            transition: "all 0.3s ease",
-            display: "inline-block",
-          }} onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = "rgba(0, 212, 255, 0.15)";
-          }} onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = "rgba(0, 212, 255, 0.1)";
-          }}>
-            Connect on LinkedIn
-          </a>
-        </div>
-      </section>
+        </section>
 
       </main>
 
-      {/* FOOTER */}
-      <footer style={{
-        borderTop: "1px solid rgba(51, 65, 85, 0.3)",
-        backgroundColor: "rgba(10, 14, 39, 0.9)",
-        backdropFilter: "blur(10px)",
-        padding: "40px 20px",
-        textAlign: "center",
-        position: "relative",
-        zIndex: 1,
-      }}>
-        <p style={{ color: "#64748b", fontSize: "14px", margin: 0, fontWeight: "600" }}>
-          © 2026 Richardren Escol. Crafted with precision. All rights reserved.
-        </p>
+      {/* Footer */}
+      <footer className="relative z-10 border-t border-white/5 glass">
+        <div className="mx-auto max-w-5xl px-5 py-10 text-center">
+          <p className="text-sm text-slate-500">
+            © 2026 Richardren Escol. All rights reserved.
+          </p>
+        </div>
       </footer>
     </div>
   );
