@@ -15,6 +15,20 @@ const NAV_LINKS = [
 
 const projectsData = [
   {
+    title: "Iron Gate Real Estate CRM",
+    description:
+      "Built a full-stack real estate CRM for contacts and property leads with admin/staff roles, configurable permissions, pipeline stages, lead assignment, activity tracking (cold calling, texting, door knocking, emailing), Gold/Silver/Bronze lead ratings, and a deal board.",
+    tech: "Django, DRF, React, JWT, SQLite",
+    image: "/projects/irongate-crm.png",
+  },
+  {
+    title: "Summit County Preforeclosure App",
+    description:
+      "Built a web app and scraper for Summit County, Ohio foreclosure cases from the Clerk of Courts. Automates case discovery, complaint PDF download, AI address extraction, and displays searchable cases (case number, file date, plaintiff, address) with View Details.",
+    tech: "Python, Flask, Selenium, Claude AI, SQLite",
+    image: "/projects/summit-county-preforeclosure.png",
+  },
+  {
     title: "YouTube Channel Email Scraper",
     description:
       "Built an automated pipeline to scrape and extract publicly available contact emails from YouTube channels at scale. Implemented filtering, deduplication, and structured CSV exports to support outreach and lead generation workflows.",
