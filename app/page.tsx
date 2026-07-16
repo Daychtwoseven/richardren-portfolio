@@ -25,7 +25,7 @@ const projectsData = [
     title: "Summit County Preforeclosure App",
     description:
       "Built a web app and scraper for Summit County, Ohio foreclosure cases from the Clerk of Courts. Automates case discovery, complaint PDF download, AI address extraction, and displays searchable cases (case number, file date, plaintiff, address) with View Details.",
-    tech: "Python, Flask, Selenium, Claude AI, SQLite",
+    tech: "Python, Flask, Claude AI, SQLite",
     image: "/projects/summit-county-preforeclosure.png",
   },
   {
